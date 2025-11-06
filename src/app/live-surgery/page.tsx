@@ -1,15 +1,13 @@
 import { LiveSurgerySession, liveSurgerySessions } from '@/lib/liveSurgery';
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Calendar, Clock, MapPin, User, BarChart, CheckCircle, Award } from "lucide-react";
+import { Award } from "lucide-react";
 
 interface LiveSurgeryCardGridProps {
   session: LiveSurgerySession;
 }
 
-function LiveSurgeryCardGrid({ session }: LiveSurgeryCardGridProps): JSX.Element | null {
+function LiveSurgeryCardGrid({ session }: LiveSurgeryCardGridProps): JSX.Element {
   const complexityColors: Record<string, string> = {
     Beginner: 'bg-green-100 text-green-700',
     Intermediate: 'bg-blue-100 text-blue-700',
@@ -43,35 +41,13 @@ function LiveSurgeryCardGrid({ session }: LiveSurgeryCardGridProps): JSX.Element
           </div>
           <h3 className="mb-3 text-xl font-bold text-gray-900 line-clamp-1">{session.title}</h3>
           <p className="text-gray-600 text-sm mb-4 line-clamp-2">{session.description}</p>
-
-          <div className="space-y-2 mb-4 text-sm text-gray-600">
-            {session.date && (
-              <div className="flex items-center">
-                <Calendar className="mr-2 h-4 w-4 text-blue-600" />
-                {session.date}
-              </div>
-            )}
-            {session.location && (
-              <div className="flex items-center">
-                <MapPin className="mr-2 h-4 w-4 text-blue-600" />
-                {session.location}
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </Link>
   );
 }
 
-export default async function LiveSurgeryPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params
-  const liveSurgery = liveSurgerySessions.find((session) => session.id === id)
-
-  if (!liveSurgery) {
-    notFound()
-  }
-
+export default function LiveSurgeryPage() {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <section className="py-12 md:py-24 lg:py-32">
