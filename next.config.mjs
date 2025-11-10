@@ -28,7 +28,7 @@ const nextConfig = {
     // Enable image optimization
     unoptimized: false,
     // Configure domains if needed
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'res.cloudinary.com'],
   },
   
   // Performance optimizations

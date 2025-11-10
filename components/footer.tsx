@@ -81,7 +81,7 @@ export function Footer() {
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
                 <Image
-                  src="/brands/alta-academy-logo-192.png"
+                  src="/Altaacademy.svg"
                   alt="Alta Academy logo"
                   width={160}
                   height={48}

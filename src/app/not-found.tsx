@@ -27,7 +27,7 @@ export default function NotFound() {
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <Image
-            src="/brands/alta-academy-logo-192.png"
+            src="/Altaacademy.svg"
             alt="Alta Academy logo"
             width={200}
             height={60}

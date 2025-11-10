@@ -105,7 +105,7 @@ export function Navigation() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
               <Image
-                src="/brands/alta-academy-logo-192.png"
+                src="/Altaacademy.svg"
                 alt="Alta Academy logo"
                 width={192}   // optional, not critical if using Tailwind sizes
                 height={64}
@@ -171,7 +171,7 @@ export function Navigation() {
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div className="flex items-center space-x-3">
                 <Image
-                  src="/brands/alta-academy-logo-192.png"
+                  src="/Altaacademy.svg"
                   alt="Alta Academy logo"
                   width={120}
                   height={40}
