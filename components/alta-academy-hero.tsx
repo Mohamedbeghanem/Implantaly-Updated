@@ -51,12 +51,12 @@ export function AltaAcademyHero() {
             </div>
             
             {/* Main Title */}
-            <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900 leading-tight animate-fade-in-up">
+            <h1 className="font-bold text-3xl md:text-6xl lg:text-5xl xl:text-6xl text-gray-900 leading-tight animate-fade-in-up">
               <span className="bg-gradient-to-r from-green-600 via-green-700 to-red-600 bg-clip-text text-transparent">
-                Advance Your
+                Specialized in Live Surgery
               </span>
               <br />
-              <span className="text-gray-800">Dental Career</span>
+              <span className="text-gray-800">Dedicated to shaping Tomorrow`s Experts</span>
             </h1>
             
             {/* Subtitle */}

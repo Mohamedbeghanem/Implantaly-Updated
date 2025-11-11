@@ -1,6 +1,8 @@
-
 'use client';
 
+import DefinitionSection from '../../../components/DefinitionSection';
+import StepsSection from '../../../components/StepsSection';
+import AltaExperience from '../../../components/AltaExperience';
 import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search } from 'lucide-react';
 import { LiveSurgerySession, liveSurgerySessions } from '@/lib/liveSurgery';
@@ -89,6 +91,9 @@ export default function LiveSurgeryPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-50">
+      <DefinitionSection />
+      <StepsSection />
+      <AltaExperience />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">

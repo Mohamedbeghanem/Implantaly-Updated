@@ -14,7 +14,6 @@ export default function HomePage() {
         <AltaAcademyHero />
         <DentalCourseSlider />
       </div>
-      <TeamSlider />
       <AnimatedLogoCloud />
       <FaqSection1 />
       <Footer />
