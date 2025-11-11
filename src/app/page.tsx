@@ -13,7 +13,6 @@ export default function HomePage() {
       <Navigation />
       <div className="pt-16 lg:pt-20">
         <AltaAcademyHero />
-        <DentalCourseSlider />
         <Feature51 />
         <Gallery6 />
         <Gallery7 />

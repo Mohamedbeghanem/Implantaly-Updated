@@ -10,67 +10,24 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-
-interface GalleryItem {
-  id: string;
-  title: string;
-  summary: string;
-  url: string;
-  image: string;
-}
+import { dentalCourses } from "@/lib/workshops";
 
 interface Gallery6Props {
   heading?: string;
   demoUrl?: string;
-  items?: GalleryItem[];
 }
 
 const Gallery6 = ({
-  heading = "Gallery",
-  demoUrl = "https://www.shadcnblocks.com",
-  items = [
-    {
-      id: "item-1",
-      title: "Build Modern UIs",
-      summary:
-        "Create stunning user interfaces with our comprehensive design system.",
-      url: "#",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "item-2",
-      title: "Computer Vision Technology",
-      summary:
-        "Powerful image recognition and processing capabilities that allow AI systems to analyze, understand, and interpret visual information from the world.",
-      url: "#",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "item-3",
-      title: "Machine Learning Automation",
-      summary:
-        "Self-improving algorithms that learn from data patterns to automate complex tasks and make intelligent decisions with minimal human intervention.",
-      url: "#",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "item-4",
-      title: "Predictive Analytics",
-      summary:
-        "Advanced forecasting capabilities that analyze historical data to predict future trends and outcomes, helping businesses make data-driven decisions.",
-      url: "#",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
-    },
-    {
-      id: "item-5",
-      title: "Neural Network Architecture",
-      summary:
-        "Sophisticated AI models inspired by human brain structure, capable of solving complex problems through deep learning and pattern recognition.",
-      url: "#",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
-    },
-  ],
+  heading = "Explore Our Workshops & Trainings",
+  demoUrl = "/workshops",
 }: Gallery6Props) => {
+  const items = dentalCourses.map((course) => ({
+    id: course.id,
+    title: course.title,
+    summary: course.description,
+    url: `/workshops/${course.id}`,
+    image: course.imageUrl,
+  }));
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -100,7 +57,7 @@ const Gallery6 = ({
               href={demoUrl}
               className="group flex items-center gap-1 text-sm font-medium md:text-base lg:text-lg"
             >
-              Book a demo
+              Learn More
               <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
