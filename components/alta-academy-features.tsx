@@ -9,7 +9,7 @@ export function AltaAcademyFeatures() {
       icon: GraduationCap,
       title: "Expert Instructors",
       description: "Learn from industry-leading professionals with decades of experience",
-      gradient: "from-emerald-500 to-teal-500"
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: Users,
@@ -21,7 +21,7 @@ export function AltaAcademyFeatures() {
       icon: Award,
       title: "Certification",
       description: "Recognized qualifications and continuing education credits",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: Clock,

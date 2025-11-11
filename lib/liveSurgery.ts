@@ -13,6 +13,7 @@ export interface LiveSurgerySession {
   maxAttendees?: number;
   includedInPrice?: string[];
   complexity?: string;
+  ceCreditHours?: number;
 }
 
 export const liveSurgerySessions: LiveSurgerySession[] = [

@@ -91,13 +91,6 @@ export default async function LiveSurgeryPage({ params }: { params: Promise<{ id
                   </div>
                 )}
               </div>
-              {liveSurgery.ceCreditHours && (
-                <div className="rounded-lg bg-blue-50 dark:bg-blue-900/20 p-4">
-                  <p className="text-sm font-semibold text-blue-900 dark:text-blue-100">
-                    CE Credit Hours: {liveSurgery.ceCreditHours}
-                  </p>
-                </div>
-              )}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg">
                   <Link href="/contact">Register Now</Link>
@@ -108,7 +101,7 @@ export default async function LiveSurgeryPage({ params }: { params: Promise<{ id
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </section>
     </main>
   )

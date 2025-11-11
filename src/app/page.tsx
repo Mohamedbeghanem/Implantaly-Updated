@@ -5,6 +5,7 @@ import TeamSlider from "@/components/mvpblocks/Team-slider"
 import DentalCourseSlider from "@/components/mvpblocks/DentalCourseSlider"
 import AnimatedLogoCloud from "@/components/AnimatedLogoCloud";
 import { FaqSection1 } from '@/components/components/pro-blocks/landing-page/faq-sections/faq-section-1'
+import LiveSteps from '@/components/mvpblocks/live-steps'
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <div className="pt-16 lg:pt-20">
         <AltaAcademyHero />
         <DentalCourseSlider />
+        <LiveSteps />
       </div>
       <AnimatedLogoCloud />
       <FaqSection1 />

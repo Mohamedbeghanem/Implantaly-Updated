@@ -11,7 +11,7 @@ export function AltaAcademyHero() {
       icon: GraduationCap,
       title: "Expert Instructors",
       description: "Learn from industry professionals",
-      gradient: "from-green-500 to-green-600"
+      gradient: "from-white to-gray-100"
     },
     {
       icon: BookOpen,
@@ -23,7 +23,7 @@ export function AltaAcademyHero() {
       icon: Award,
       title: "Certification",
       description: "Recognized qualifications",
-      gradient: "from-red-500 to-red-600"
+      gradient: "from-white to-gray-100"
     }
   ]
   return (

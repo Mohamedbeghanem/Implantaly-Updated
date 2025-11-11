@@ -3,10 +3,13 @@
 import DefinitionSection from '../../../components/DefinitionSection';
 import StepsSection from '../../../components/StepsSection';
 import AltaExperience from '../../../components/AltaExperience';
+import LiveSteps from '../../../components/mvpblocks/live-steps';
 import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search } from 'lucide-react';
 import { LiveSurgerySession, liveSurgerySessions } from '@/lib/liveSurgery';
 import Link from 'next/link';
+import { Hero7 } from '@/components/hero7';
+
 
 function LiveSurgeryCardGrid({ session }: { session: LiveSurgerySession }) {
   const complexityColors: Record<string, string> = {
@@ -68,9 +71,8 @@ function LiveSurgeryCardGrid({ session }: { session: LiveSurgerySession }) {
               <p className="text-sm font-semibold text-gray-900">{session.surgeon}</p>
             </div>
             <div className="text-right">
-              <p className="text-2xl font-bold text-blue-600">{session.price}</p>
-              <button className="mt-2 bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg transition-colors">
-                Enroll Now
+              <button className="mt-2 text-white text-sm px-4 py-2 rounded-lg transition-colors">
+                <p className="text-2xl font-bold text-blue-600">{session.price}</p>
               </button>
             </div>
           </div>
@@ -91,37 +93,10 @@ export default function LiveSurgeryPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-50">
-      <DefinitionSection />
+      <Hero7 />
       <StepsSection />
       <AltaExperience />
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Live Surgery Sessions
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8">
-              Master advanced dental techniques with hands-on training from world-class instructors
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                <p className="text-3xl font-bold">{liveSurgerySessions.length}+</p>
-                <p className="text-sm text-blue-100">Sessions Available</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                <p className="text-3xl font-bold">15+</p>
-                <p className="text-sm text-blue-100">Expert Instructors</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                <p className="text-3xl font-bold">5000+</p>
-                <p className="text-sm text-blue-100">Students Trained</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <LiveSteps />
       {/* Filters Section */}
       <section className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl py-6">

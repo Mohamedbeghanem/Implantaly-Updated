@@ -32,7 +32,7 @@ function CourseCard({ course }: { course: DentalCourse }) {
       </div>
 
       <div className="flex h-[280px] flex-col p-6">
-        <div className="text-blue-700 mb-2 flex items-center text-sm font-semibold">
+        <div className="text-green-700 mb-2 flex items-center text-sm font-semibold">
           <Award className="mr-2 h-4 w-4" />
           {course.category}
         </div>
@@ -43,18 +43,18 @@ function CourseCard({ course }: { course: DentalCourse }) {
         <div className="space-y-2 mb-4 text-sm text-gray-700">
           {course.date && (
             <div className="flex items-center">
-              <Calendar className="mr-2 h-4 w-4 text-blue-500" />
+              <Calendar className="mr-2 h-4 w-4 text-green-700" />
               {course.date}
             </div>
           )}
           {course.location && (
             <div className="flex items-center">
-              <MapPin className="mr-2 h-4 w-4 text-blue-500" />
+              <MapPin className="mr-2 h-4 w-4 text-green-700" />
               {course.location}
             </div>
           )}
           <div className="flex items-center">
-            <Clock className="mr-2 h-4 w-4 text-blue-500" />
+            <Clock className="mr-2 h-4 w-4 text-green-700" />
             {course.duration}
           </div>
         </div>
@@ -66,7 +66,7 @@ function CourseCard({ course }: { course: DentalCourse }) {
               <p className="text-md font-bold text-gray-900">{course.instructor}</p>
             </div>
             <div className="text-right">
-              <p className="text-2xl font-extrabold text-blue-700">{course.price}</p>
+              <p className="text-2xl font-extrabold text-green-700">{course.price}</p>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function DentalCourseSlider() {
       <div className="container px-4 md:px-6">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-            Live Surgery Courses
+            Discover Our Workshops
           </h2>
           <p className="text-gray-600 mx-auto max-w-2xl md:text-lg">
             Learn from the best with hands-on live surgery demonstrations and advanced training programs.
