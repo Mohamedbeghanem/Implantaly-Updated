@@ -47,7 +47,7 @@ export function AltaAcademyHero() {
             {/* Badge */}
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500/10 to-red-500/10 backdrop-blur-xl rounded-full border border-green-200 text-green-700 text-sm font-medium mb-6 animate-fade-in">
               <GraduationCap className="w-4 h-4 mr-2" />
-              Professional Dental Education Platform
+              Implantaly Dental Clinic by Hs
             </div>
             
             {/* Main Title */}
@@ -61,15 +61,14 @@ export function AltaAcademyHero() {
             
             {/* Subtitle */}
             <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              Comprehensive dental education and training programs designed to elevate your skills, 
-              advance your career, and deliver exceptional patient care through expert instruction.
+                Live Surgery is an immersive educational method that allows participants to observe real-time surgical procedures performed by expert clinicians. It provides immediate insight into operative decision-making, technical protocols, and real clinical variations.
             </p>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <Button size="lg" asChild className="group bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 px-10 py-4 text-lg font-semibold rounded-xl border-0">
-                <Link href="/courses" className="flex items-center">
-                  Explore Courses
+                <Link href="/live-surgery" className="flex items-center">
+                  Explore our Lives
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </Button>
@@ -77,7 +76,7 @@ export function AltaAcademyHero() {
               <Button variant="outline" size="lg" asChild className="group border-2 border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 transform hover:scale-105 px-10 py-4 text-lg font-semibold rounded-xl backdrop-blur-xl bg-white/80">
                 <Link href="/contact" className="flex items-center text-gray-700">
                   <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-                  Watch Demo
+                  Learn More via Whatsapp
                 </Link>
               </Button>
             </div>
