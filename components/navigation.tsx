@@ -110,7 +110,7 @@ export function Navigation() {
                 width={400}
                 height={120}
                 priority
-                className="h-24 w-auto sm:h-28 lg:h-36"
+                className="h-20 w-auto sm:h-24 lg:h-32"
                 style={{ maxWidth: "none" }}
               />
             </Link>
@@ -176,7 +176,7 @@ export function Navigation() {
                   alt="Alta Academy logo"
                   width={420}
                   height={126}
-                  className="h-28 w-auto"
+                  className="h-24 w-auto"
                 />
               </div>
               <button

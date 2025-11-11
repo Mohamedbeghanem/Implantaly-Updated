@@ -1,11 +1,11 @@
 import { Navigation } from "@/components/navigation"
 import { AltaAcademyHero } from "@/components/alta-academy-hero"
 import { Footer } from "@/components/footer"
-import TeamSlider from "@/components/mvpblocks/Team-slider"
 import DentalCourseSlider from "@/components/mvpblocks/DentalCourseSlider"
 import AnimatedLogoCloud from "@/components/AnimatedLogoCloud";
-import { FaqSection1 } from '@/components/components/pro-blocks/landing-page/faq-sections/faq-section-1'
-import LiveSteps from '@/components/mvpblocks/live-steps'
+import { Gallery6 } from '@/components/gallery6'
+import { Feature51 } from '@/components/feature51'
+import { Gallery7 } from '@/components/gallery7'
 
 export default function HomePage() {
   return (
@@ -14,10 +14,11 @@ export default function HomePage() {
       <div className="pt-16 lg:pt-20">
         <AltaAcademyHero />
         <DentalCourseSlider />
-        <LiveSteps />
+        <Feature51 />
+        <Gallery6 />
+        <Gallery7 />
       </div>
       <AnimatedLogoCloud />
-      <FaqSection1 />
       <Footer />
     </main>
   )
