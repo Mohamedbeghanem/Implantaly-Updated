@@ -23,7 +23,7 @@ interface Hero1Props {
   };
 }
 
-const Hero1 = ({
+const Hero2 = ({
   badge = "Implantaly Dental Clinic By Hs",
   heading = "Live Surgery,See it,Learn it,Master it",
   description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
@@ -86,4 +86,4 @@ const Hero1 = ({
   );
 };
 
-export { Hero1 };
+export { Hero2 };

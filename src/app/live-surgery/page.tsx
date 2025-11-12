@@ -5,12 +5,16 @@ import StepsSection from '../../../components/StepsSection';
 import AltaExperience from '../../../components/AltaExperience';
 import LiveSteps from '../../../components/mvpblocks/live-steps';
 import { useState } from 'react';
-import { Calendar, Clock, MapPin, Award, Filter, Search } from 'lucide-react';
+import { Calendar, Clock, MapPin, Award, Filter, Search, Import } from 'lucide-react';
 import { LiveSurgerySession, liveSurgerySessions } from '@/lib/liveSurgery';
 import Link from 'next/link';
 import { Hero7 } from '@/components/hero7';
 import { Hero1 } from '@/components/hero1';
 import {Process1} from '@/components/process1';
+import {Cta10}  from '@/components/cta10';  
+import {Faq1} from '@/components/faq1';
+import { Feature43 } from '@/components/feature43';
+import { Footer } from "@/components/footer"
 
 
 function LiveSurgeryCardGrid({ session }: { session: LiveSurgerySession }) {
@@ -103,7 +107,6 @@ export default function LiveSurgeryPage() {
           alt: 'Live surgery session in progress',
         }}
       />
-      <LiveSteps />
       {/* Filters Section */}
       <section className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl py-6">
@@ -141,8 +144,25 @@ export default function LiveSurgeryPage() {
               </button>
             </div>
           )}
+          <Feature43 />
+          <Faq1 />
+           <Cta10
+      heading="Join Our Live Surgery Sessions Today!"
+      description="Don't miss out on the opportunity to learn from the best in the field. Sign up for our live surgery sessions and take your skills to the next level."
+      buttons={{
+        primary: {
+          text: "Sign Up Now",
+          url: "/signup",
+        },
+        secondary: {
+          text: "Learn More",
+          url: "/about-live-surgery",}}}
+    />
         </div>
       </section>
+    <Footer />
+
     </div>
+
   );
 }

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search } from 'lucide-react';
 import { dentalCourses, DentalCourse } from '@/lib/workshops';
 import Link from 'next/link';
+import { Footer } from '@/components/footer'; 
+import { Hero2 } from '@/components/hero-work';
 
 function CourseCardGrid({ course }: { course: DentalCourse }) {
   const levelColors: Record<DentalCourse['level'], string> = {
@@ -105,30 +107,26 @@ export default function DentalCoursesFullPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-white-600 to-gray-400 text-black py-20">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Live Surgery Courses
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8">
-              Master advanced dental techniques with hands-on training from world-class instructors
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                <p className="text-3xl font-bold">{dentalCourses.length}+</p>
-                <p className="text-sm text-blue-100">Courses Available</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                <p className="text-3xl font-bold">15+</p>
-                <p className="text-sm text-blue-100">Expert Instructors</p>
-              </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
-                <p className="text-3xl font-bold">5000+</p>
-                <p className="text-sm text-blue-100">Students Trained</p>
-              </div>
-            </div>
-          </div>
+          <Hero2
+            heading="Explore Our Dental Workshops"
+            description="Enhance your skills with our comprehensive dental workshops designed for all levels. Join us to learn from industry experts and advance your career."
+            buttons={{
+              primary: {
+                text: "Browse Workshops",
+                url: "/workshops",
+              },
+              secondary: {
+                text: "Contact Us",
+                url: "/contact",
+              },
+            }}
+            image={{
+              src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+              alt: "Hero section demo image showing interface components",
+            }}
+          />
         </div>
       </section>
 
@@ -215,7 +213,8 @@ export default function DentalCoursesFullPage() {
               </button>
             </div>
           )}
-        </div>
+        </div><div></div>
+    <Footer />
       </section>
     </div>
   );
