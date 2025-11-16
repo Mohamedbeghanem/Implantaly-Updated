@@ -39,11 +39,11 @@ export function Navigation() {
                 <Image
                   src="/Altaacademy.svg"
                   alt="Alta Academy Logo"
-                  width={220}
-                  height={60}
+                  width={280}
+                  height={75}
                   priority
-                  className="h-[60px] w-[220px]"
-                  style={{width: '220px !important', height: '60px !important'}}
+                  className="h-[75px] w-[280px]"
+                  style={{width: '280px !important', height: '75px !important'}}
                 />
               </Link>
             </div>
@@ -54,7 +54,7 @@ export function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium text-[15px]"
+                  className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium text-[17px]"
                 >
                   {item.label}
                 </Link>
@@ -109,11 +109,11 @@ export function Navigation() {
                   <Image
                     src="/Altaacademy.svg"
                     alt="Alta Academy Logo"
-                    width={220}
-                    height={60}
+                    width={280}
+                    height={75}
                     priority
-                    className="h-[60px] w-[220px]"
-                    style={{width: '220px !important', height: '60px !important'}}
+                    className="h-[75px] w-[280px]"
+                    style={{width: '280px !important', height: '75px !important'}}
                   />
                 </Link>
                 <button
@@ -132,7 +132,7 @@ export function Navigation() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-3 py-3 px-4 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200 group mb-1"
+                    className="flex items-center space-x-3 py-3 px-4 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200 group mb-1 text-lg"
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     <item.icon className="w-5 h-5 text-gray-500 group-hover:text-emerald-500 group-hover:scale-110 transition-all duration-200" aria-hidden="true" />

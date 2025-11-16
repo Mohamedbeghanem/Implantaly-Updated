@@ -46,6 +46,11 @@ const Hero2 = ({
     <section className="py-32">
       <div className="container">
         <div className="grid items-center gap-8 lg:grid-cols-2">
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="max-h-96 w-full rounded-md object-cover"
+          />
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             {badge && (
               <Badge variant="outline">
@@ -75,11 +80,6 @@ const Hero2 = ({
               )}
             </div>
           </div>
-          <img
-            src={image.src}
-            alt={image.alt}
-            className="max-h-96 w-full rounded-md object-cover"
-          />
         </div>
       </div>
     </section>
