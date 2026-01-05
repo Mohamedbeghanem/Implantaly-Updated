@@ -1,20 +1,15 @@
 'use client';
-
-import DefinitionSection from '../../../components/DefinitionSection';
-import StepsSection from '../../../components/StepsSection';
-import AltaExperience from '../../../components/AltaExperience';
-import LiveSteps from '../../../components/mvpblocks/live-steps';
 import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search, Import } from 'lucide-react';
 import { DentalCourse, dentalCourses } from '@/lib/workshops';
 import Link from 'next/link';
-import { Hero7 } from '@/components/hero7';
 import { Hero1 } from '@/components/hero1';
-import {Process1} from '@/components/process1';
+import {Process2} from '@/components/process2';
+import {Process22} from '@/components/process22';
 import {Cta10}  from '@/components/cta10';  
-import {Faq1} from '@/components/faq1';
-import { Feature43 } from '@/components/feature43';
+import {Faq2} from '@/components/faqworkshop';
 import { Footer } from "@/components/footer"
+import { Featureworkshop } from '@/components/featureworkshop';
 
 
 function WorkshopCardGrid({ session }: { session: DentalCourse }) {
@@ -100,8 +95,8 @@ export default function WorkshopsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <Hero1
-        heading="Workshops"
-        description="Enhance your skills and knowledge by attending our workshops."
+        heading="Alta Workshops"
+        description="Les workshops Alta Academy sont organisés sous forme de formations pratiques intensives, orientées sur l’acquisition de gestes maîtrisés, de protocoles clairs et de résultats reproductibles."
         image={{
           src: '/Masterclass-inoral4-4.jpeg',
           alt: 'Workshop session in progress',
@@ -115,7 +110,8 @@ export default function WorkshopsPage() {
           </div>
         </div>
       </section>
-      <Process1 />
+      <Process2 />
+      <Process22 />
       {/* Courses Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
@@ -138,8 +134,8 @@ export default function WorkshopsPage() {
               </button>
             </div>
           )}
-          <Feature43 />
-          <Faq1 />
+          <Featureworkshop />
+          <Faq2  />
            <Cta10
       heading="Join Our Workshops Today!"
       description="Don't miss out on the opportunity to learn from the best in the field. Sign up for our workshops and take your skills to the next level."

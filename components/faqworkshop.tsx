@@ -16,44 +16,38 @@ interface Faq1Props {
   items?: FaqItem[];
 }
 
-const Faq1 = ({
+const Faq2 = ({
   heading = "Frequently asked questions",
   items = [
     {
       id: "faq-1",
-      question: "Where do our live sessions take place?",
+      question: "À qui s’adressent les workshops ?",
       answer:
         "In modern dental clinics, fully equipped with the latest digital and surgical technologies.",
     },
     {
       id: "faq-2",
-      question: "Who are our live sessions for?",
+      question: "Les formations sont-elles pratiques ?",
       answer:
-        "Dentists, implantologists, and practitioners looking to refine their clinical and digital skills.",
+        "Oui. Tous les workshops sont orientés hands-on, avec une pratique encadrée et des démonstrations expertes.",
     },
     {
       id: "faq-3",
-      question: "What topics are covered during the live sessions?",
+      question: "Les formations chirurgicales et labo sont-elles séparées ?",
       answer:
-        "Advanced implantology, guided surgery, LID flap, immediate extraction–implant placement, soft tissue management, digital prosthetics, and CAD/CAM workflows.",
+        "Oui. Les workflows chirurgicaux et prothétiques sont proposés en formations distinctes et indépendantes.",
     },
     {
       id: "faq-4",
-      question: "Are the procedures performed under real clinical conditions?",
+      question: "Le matériel est-il fourni ?",
       answer:
-        "Yes. All surgeries are carried out in real clinical settings, on real patients, with live transmission.",
+        "Oui. Tout le matériel pédagogique et technique nécessaire est mis à disposition des participants.",
     },
     {
       id: "faq-5",
-      question: "Can participants interact during the live session?",
+      question: "Reçoit-on une attestation de participation ?",
       answer:
-        "Absolutely. Participants can ask questions in real time and interact directly with the experts.",
-    },
-    {
-      id: "faq-6",
-      question: "Do participants receive educational material or a certificate?",
-      answer:
-        "Yes. Each participant receives structured educational support and a certificate of attendance.",
+        "Oui. Une attestation officielle Alta Academy est remise à la fin de chaque workshop.",
     },
   ],
 }: Faq1Props) => {
@@ -80,4 +74,4 @@ const Faq1 = ({
   );
 };
 
-export { Faq1 };
+export { Faq2 };

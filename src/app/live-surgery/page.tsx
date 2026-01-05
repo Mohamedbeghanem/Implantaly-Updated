@@ -8,12 +8,11 @@ import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search, Import } from 'lucide-react';
 import { LiveSurgerySession, liveSurgerySessions } from '@/lib/liveSurgery';
 import Link from 'next/link';
-import { Hero7 } from '@/components/hero7';
 import { Hero1 } from '@/components/hero1';
 import {Process1} from '@/components/process1';
 import {Cta10}  from '@/components/cta10';  
 import {Faq1} from '@/components/faq1';
-import { Feature43 } from '@/components/feature43';
+import { Feature43 } from '@/components/featurelive';
 import { Footer } from "@/components/footer"
 
 

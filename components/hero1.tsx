@@ -26,15 +26,15 @@ interface Hero1Props {
 const Hero1 = ({
   badge = "Alta Academy By Implantaly",
   heading = "Live Surgery,See it,Learn it,Master it",
-  description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+  description = "Les workshops Alta Academy sont organisés sous forme de formations pratiques intensives, orientées sur l’acquisition de gestes maîtrisés, de protocoles clairs et de résultats reproductibles.",
   buttons = {
     primary: {
       text: "Contact Us",
       url: "/contact",
     },
     secondary: {
-      text: "Discover our lives",
-      url: "/live-surgery",
+      text: "Discover our Workshops",
+      url: "/workshops",
     },
   },
   image = {

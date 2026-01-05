@@ -3,25 +3,31 @@ import React from "react";
 
 import { Button } from "@/components/ui/button";
 
-const Process1 = () => {
+const Process2 = () => {
   const process = [
     {
       step: "01",
-      title: "Surgical Protocol Briefing",
+      title: "Introduction clinique",
       description:
-        "A structured, slide-based presentation covering indications, case selection, workflow, and essential surgical principles.",
+        "Présentation des indications,Objectifs de la technique,Rappels biologiques et chirurgicaux essentiels",
     },
     {
       step: "02",
-      title: "Live Surgical Execution",
+      title: "Démonstration expertee",
       description:
-        "Participants observe the procedure in real time with direct interaction—asking questions and understanding every clinical step as it unfolds.",
+        "Présentation pas-à-pas de la technique,Explication des gestes clés,Mise en évidence des erreurs à éviter",
     },
     {
       step: "03",
-      title: "Clinical Debrief & Takeaways",
+      title: "Pratique Hands-On",
       description:
-        "A focused case review highlighting clinical reasoning, success factors, potential pitfalls, and actionable insights for immediate application",
+        "Réalisation par les participants, Travail sur modèles pédagogiques, Encadrement individuel et corrections en temps réel",
+    },
+      {
+      step: "04",
+      title: "Validation & discussion",
+      description:
+        "Analyse des résultats obtenus, Questions / réponses, Conseils d’application en pratique quotidienne",
     },
   ];
 
@@ -32,7 +38,7 @@ const Process1 = () => {
           <div className="top-10 col-span-2 h-fit w-fit gap-3 space-y-7 py-8 lg:sticky">
             <div className="relative w-fit text-5xl font-semibold tracking-tight lg:text-7xl">
               {" "}
-              <h1 className="w-fit">Our Process</h1>
+              <h1 className="w-fit">Chirurgie -Processus</h1>
               <Asterisk className="absolute -right-2 -top-2 size-5 text-red-500 md:size-10 lg:-right-14" />
             </div>
             <p className="text-foreground/50 text-base">
@@ -73,7 +79,7 @@ const Process1 = () => {
   );
 };
 
-export { Process1 };
+export { Process2 };
 
 const Illustration = (props: React.SVGProps<SVGSVGElement>) => {
   return (

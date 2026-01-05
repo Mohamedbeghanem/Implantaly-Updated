@@ -3,25 +3,31 @@ import React from "react";
 
 import { Button } from "@/components/ui/button";
 
-const Process1 = () => {
+const Process22 = () => {
   const process = [
     {
       step: "01",
-      title: "Surgical Protocol Briefing",
+      title: "Présentation du cas prothétique",
       description:
-        "A structured, slide-based presentation covering indications, case selection, workflow, and essential surgical principles.",
+        "Objectif esthétique et fonctionnel, Choix du matériau, Lecture clinique du cas",
     },
     {
       step: "02",
-      title: "Live Surgical Execution",
+      title: "Démonstration technique",
       description:
-        "Participants observe the procedure in real time with direct interaction—asking questions and understanding every clinical step as it unfolds.",
+        "Présentation de la technique prothétique, Séquence de travail expliquée étape par étape, Astuces professionnelles",
     },
     {
       step: "03",
-      title: "Clinical Debrief & Takeaways",
+      title: "Pratique Workshop",
       description:
-        "A focused case review highlighting clinical reasoning, success factors, potential pitfalls, and actionable insights for immediate application",
+        "Réalisation par les participants, Application directe des techniques, Corrections individualisées",
+          },
+        {
+      step: "04",
+      title: "Finition & évaluation",
+      description:
+        "Analyse du résultat final,Optimisation esthétique,Conseils d’intégration clinique ou labo",
     },
   ];
 
@@ -32,11 +38,11 @@ const Process1 = () => {
           <div className="top-10 col-span-2 h-fit w-fit gap-3 space-y-7 py-8 lg:sticky">
             <div className="relative w-fit text-5xl font-semibold tracking-tight lg:text-7xl">
               {" "}
-              <h1 className="w-fit">Our Process</h1>
+              <h1 className="w-fit">Processus Prothétique</h1>
               <Asterisk className="absolute -right-2 -top-2 size-5 text-red-500 md:size-10 lg:-right-14" />
             </div>
             <p className="text-foreground/50 text-base">
-              Our Live Surgery sessions offer participants a direct and structured learning experience. Each training blends theoretical clarity, real-time surgical observation, and expert interaction to ensure a complete understanding of the technique.
+              Les Workshops Labo sont des formations 100 % prothétiques, orientées sur la précision, l’esthétique et la maîtrise du matériau.Chaque participant travaille sur son propre poste, avec un suivi continu.
             </p>
 
             <Button
@@ -73,7 +79,7 @@ const Process1 = () => {
   );
 };
 
-export { Process1 };
+export { Process22 };
 
 const Illustration = (props: React.SVGProps<SVGSVGElement>) => {
   return (
