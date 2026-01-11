@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search, Import } from 'lucide-react';
 import { DentalCourse, dentalCourses } from '@/lib/workshops';
 import Link from 'next/link';
-import { Hero1 } from '@/components/hero1';
+import { Hero2 } from '@/components/hero2';
 import {Process2} from '@/components/process2';
 import {Process22} from '@/components/process22';
 import {Cta10}  from '@/components/cta10';  
@@ -50,18 +50,18 @@ function WorkshopCardGrid({ session }: { session: DentalCourse }) {
           <div className="space-y-2 mb-4 text-sm text-gray-600">
             {session.date && (
               <div className="flex items-center">
-                <Calendar className="mr-2 h-4 w-4 text-blue-600" />
+                <Calendar className="mr-2 h-4 w-4 text-green-600" />
                 {session.date}
               </div>
             )}
             {session.location && (
               <div className="flex items-center">
-                <MapPin className="mr-2 h-4 w-4 text-blue-600" />
+                <MapPin className="mr-2 h-4 w-4 text-green-600" />
                 {session.location}
               </div>
             )}
             <div className="flex items-center">
-              <Clock className="mr-2 h-4 w-4 text-blue-600" />
+              <Clock className="mr-2 h-4 w-4 text-green-600" />
               {session.duration}
             </div>
           </div>
@@ -73,7 +73,7 @@ function WorkshopCardGrid({ session }: { session: DentalCourse }) {
             </div>
             <div className="text-right">
               <button className="mt-2 text-white text-sm px-4 py-2 rounded-lg transition-colors">
-                <p className="text-2xl font-bold text-blue-600">{session.price}</p>
+                <p className="text-2xl font-bold text-green-600">{session.price}</p>
               </button>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function WorkshopsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
-      <Hero1
+      <Hero2
         heading="Alta Workshops"
         description="Les workshops Alta Academy sont organisés sous forme de formations pratiques intensives, orientées sur l’acquisition de gestes maîtrisés, de protocoles clairs et de résultats reproductibles."
         image={{
@@ -128,7 +128,7 @@ export default function WorkshopsPage() {
                 onClick={() => {
                   setSearchQuery('');
                 }}
-                className="mt-4 text-blue-600 hover:text-blue-700 font-medium"
+                className="mt-4 text-blue-600 hover:text-green-700 font-medium"
               >
                 Clear all filters
               </button>

@@ -8,7 +8,9 @@
     "blog": "Blog",
     "appointments": "Appuntamenti",
     "contact": "Contatti",
-    "bookNow": "Prenota Ora"
+    "bookNow": "Prenota Ora",
+    "openMenu": "Apri Menu",
+    "closeMenu": "Chiudi Menu"
   },
   "hero": {
     "title": "Benvenuti in Implantaly Group",
@@ -137,7 +139,11 @@
       "address": "Indirizzo",
       "phone": "Telefono",
       "email": "Email",
-      "hours": "Orari"
+      "hours": "Orari",
+      "title": "Restiamo in Contatto",
+      "emailLabel": "Scrivici a",
+      "phoneLabel": "Chiamaci al",
+      "locationLabel": "Situato a"
     },
     "inquiryTypes": {
       "generalInformation": "Informazioni Generali",
@@ -156,7 +162,11 @@
   "footer": {
     "copyright": "© 2024 Implantaly Group. Tutti i diritti riservati.",
     "privacy": "Informativa sulla Privacy",
-    "terms": "Termini di Servizio"
+    "terms": "Termini di Servizio",
+    "description": "Specialisti leader di impianti dentali che forniscono tecnologia all'avanguardia e cure compassionevoli per aiutarti a raggiungere il tuo sorriso perfetto.",
+    "quickLinks": "Collegamenti Rapidamente",
+    "services": "Servizi",
+    "contact": "Informazioni di Contatto"
   },
   "common": {
     "loading": "Caricamento...",

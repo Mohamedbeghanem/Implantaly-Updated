@@ -54,18 +54,18 @@ function LiveSurgeryCardGrid({ session }: { session: LiveSurgerySession }) {
           <div className="space-y-2 mb-4 text-sm text-gray-600">
             {session.date && (
               <div className="flex items-center">
-                <Calendar className="mr-2 h-4 w-4 text-blue-600" />
+                <Calendar className="mr-2 h-4 w-4 text-green-600" />
                 {session.date}
               </div>
             )}
             {session.location && (
               <div className="flex items-center">
-                <MapPin className="mr-2 h-4 w-4 text-blue-600" />
+                <MapPin className="mr-2 h-4 w-4 text-green-600" />
                 {session.location}
               </div>
             )}
             <div className="flex items-center">
-              <Clock className="mr-2 h-4 w-4 text-blue-600" />
+              <Clock className="mr-2 h-4 w-4 text-green-600" />
               {session.duration}
             </div>
           </div>
@@ -77,7 +77,7 @@ function LiveSurgeryCardGrid({ session }: { session: LiveSurgerySession }) {
             </div>
             <div className="text-right">
               <button className="mt-2 text-white text-sm px-4 py-2 rounded-lg transition-colors">
-                <p className="text-2xl font-bold text-blue-600">{session.price}</p>
+                <p className="text-2xl font-bold text-green-600">{session.price}</p>
               </button>
             </div>
           </div>

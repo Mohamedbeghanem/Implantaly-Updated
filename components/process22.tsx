@@ -9,25 +9,25 @@ const Process22 = () => {
       step: "01",
       title: "Présentation du cas prothétique",
       description:
-        "Objectif esthétique et fonctionnel, Choix du matériau, Lecture clinique du cas",
+        "Analyse complète du cas clinique et de son contexte prothétique.Définition des objectifs esthétiques et fonctionnels, lecture des contraintes cliniques et discussion autour du choix du matériau et de l’approche prothétique la plus adaptée.",
     },
     {
       step: "02",
       title: "Démonstration technique",
       description:
-        "Présentation de la technique prothétique, Séquence de travail expliquée étape par étape, Astuces professionnelles",
+        "Présentation détaillée de la technique prothétique par le formateur.Chaque étape du protocole est expliquée pas à pas, avec mise en évidence des points clés, des erreurs fréquentes et des astuces professionnelles issues de la pratique quotidienne.",
     },
     {
       step: "03",
       title: "Pratique Workshop",
       description:
-        "Réalisation par les participants, Application directe des techniques, Corrections individualisées",
+        "Réalisation des différentes étapes par les participants sur leur propre poste de travail.Application directe des techniques enseignées, avec accompagnement individualisé, corrections en temps réel et ajustements personnalisés selon le niveau de chacun.",
           },
         {
       step: "04",
       title: "Finition & évaluation",
       description:
-        "Analyse du résultat final,Optimisation esthétique,Conseils d’intégration clinique ou labo",
+        "Analyse du résultat final obtenu par chaque participant.Optimisation des aspects esthétiques et fonctionnels, discussion des finitions, et conseils pratiques pour l’intégration clinique ou en laboratoire, afin d’assurer un résultat durable et reproductible.",
     },
   ];
 

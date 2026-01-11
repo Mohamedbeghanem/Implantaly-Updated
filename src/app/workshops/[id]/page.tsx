@@ -82,13 +82,27 @@ export default async function WorkshopDetailPage({
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg">
-                  <Link href="/contact">Register Now</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/contact">Contact for More</Link>
-                </Button>
+              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <h2 className="text-xl font-semibold">Register for this workshop</h2>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      Complete registration on a dedicated page.
+                    </p>
+                  </div>
+                  <div className="text-left text-sm text-gray-500 dark:text-gray-400 sm:text-right">
+                    <div className="font-semibold text-gray-900 dark:text-white">Limited seats</div>
+                    Early confirmation is recommended.
+                  </div>
+                </div>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <Button asChild size="lg">
+                    <Link href={`/workshops/${Workshop.id}/register`}>Register Now</Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <Link href="/contact">Contact for More</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

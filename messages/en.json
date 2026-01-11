@@ -139,7 +139,11 @@
       "address": "Address",
       "phone": "Phone",
       "email": "Email",
-      "hours": "Hours"
+      "hours": "Hours",
+      "title": "Connect with Us",
+      "emailLabel": "Email to us at",
+      "phoneLabel": "Call us at",
+      "locationLabel": "Location at"
     },
     "inquiryTypes": {
       "generalInformation": "General Information",

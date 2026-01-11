@@ -33,8 +33,8 @@ const Hero2 = ({
       url: "/contact",
     },
     secondary: {
-      text: "Discover our lives",
-      url: "/live-surgery",
+      text: "Discover our Workshops",
+      url: "/workshops",
     },
   },
   image = {

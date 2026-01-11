@@ -8,7 +8,9 @@
     "blog": "Blog",
     "appointments": "Rendez-vous",
     "contact": "Contact",
-    "bookNow": "Réserver Maintenant"
+    "bookNow": "Réserver Maintenant",
+    "openMenu": "Ouvrir le Menu",
+    "closeMenu": "Fermer le Menu"
   },
   "hero": {
     "title": "Bienvenue chez Implantaly Group",
@@ -137,7 +139,11 @@
       "address": "Adresse",
       "phone": "Téléphone",
       "email": "Email",
-      "hours": "Heures"
+      "hours": "Heures",
+      "title": "Restons en Contact",
+      "emailLabel": "Envoyez-nous un email à",
+      "phoneLabel": "Appelez-nous au",
+      "locationLabel": "Situé à"
     },
     "inquiryTypes": {
       "generalInformation": "Informations Générales",
@@ -156,7 +162,11 @@
   "footer": {
     "copyright": "© 2024 Implantaly Group. Tous droits réservés.",
     "privacy": "Politique de Confidentialité",
-    "terms": "Conditions de Service"
+    "terms": "Conditions de Service",
+    "description": "Spécialistes d'implants dentaires de premier plan fournissant une technologie de pointe et des soins compatissants pour vous aider à atteindre votre sourire parfait.",
+    "quickLinks": "Liens Rapides",
+    "services": "Services",
+    "contact": "Informations de Contact"
   },
   "common": {
     "loading": "Chargement...",

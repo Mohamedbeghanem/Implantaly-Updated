@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-interface Hero1Props {
+interface Hero2Props {
   badge?: string;
   heading: string;
   description: string;
@@ -23,7 +23,7 @@ interface Hero1Props {
   };
 }
 
-const Hero1 = ({
+const Hero2 = ({
   badge = "Alta Academy By Implantaly",
   heading = "Live Surgery,See it,Learn it,Master it",
   description = "Les workshops Alta Academy sont organisés sous forme de formations pratiques intensives, orientées sur l’acquisition de gestes maîtrisés, de protocoles clairs et de résultats reproductibles.",
@@ -33,15 +33,15 @@ const Hero1 = ({
       url: "/contact",
     },
     secondary: {
-      text: "Discover our Live Surgery",
-      url: "/live-surgery",
+      text: "Discover our Workshops",
+      url: "/workshops",
     },
   },
   image = {
     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
     alt: "Hero section demo image showing interface components",
   },
-}: Hero1Props) => {
+}: Hero2Props) => {
   return (
     <section className="py-32">
       <div className="container">
@@ -86,4 +86,4 @@ const Hero1 = ({
   );
 };
 
-export { Hero1 };
+export { Hero2 };
