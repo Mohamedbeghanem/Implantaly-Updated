@@ -2,13 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px 0 rgba(34, 197, 94, 0.37);
-  --italian-green: #22c55e;
-  --italian-white: #ffffff;
-  --italian-red: #ef4444;
+:root,
+html[data-theme="light"] {
+  --background: 60 14% 98%;
+  --surface: 0 0% 100%;
+  --foreground: 0 0% 10%;
+  --muted: 0 0% 36%;
+  --border: 0 0% 90%;
+  --primary: 148 100% 27%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 356 72% 47%;
+  --accent-foreground: 0 0% 100%;
+  --success: 148 100% 27%;
+  --destructive: 356 72% 47%;
+  --ring: 148 55% 41%;
+  --radius: 12px;
+  --surface-2: var(--surface);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--foreground);
+  --muted-foreground: var(--muted);
+  --input: var(--surface);
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+}
+
+html[data-theme="dark"] {
+  --background: 180 6% 6%;
+  --surface: 180 6% 9%;
+  --foreground: 0 0% 96%;
+  --muted: 0 0% 71%;
+  --border: 0 0% 15%;
+  --primary: 152 100% 33%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 355 78% 57%;
+  --accent-foreground: 0 0% 100%;
+  --success: 152 100% 33%;
+  --destructive: 355 78% 57%;
+  --ring: 152 100% 65%;
+  --surface-2: var(--surface);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--foreground);
+  --muted-foreground: var(--muted);
+  --input: var(--surface);
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
 }
 
 /* Custom Animations */
@@ -34,11 +75,11 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { 
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5); 
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.45);
   }
-  50% { 
-    box-shadow: 0 0 40px rgba(34, 197, 94, 0.8); 
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.75);
   }
 }
 
@@ -58,14 +99,14 @@
 
 /* Fallback for backdrop-blur-2xl */
 @supports not (backdrop-filter: blur(20px)) {
-  .backdrop-blur-2xl { 
-    background: var(--glass-bg); 
+  .backdrop-blur-2xl {
+    background: hsl(var(--surface) / 0.8);
   }
 }
 
 /* Smooth Scrolling */
-html { 
-  scroll-behavior: smooth; 
+html {
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar with Italian Colors */
@@ -73,9 +114,13 @@ html {
   display: none;
 }
 
-/* Enhanced Focus States with Italian Colors */
 *:focus {
   outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
 }
 
 /* Smooth Transitions */
@@ -89,9 +134,9 @@ html {
 .btn-modern {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--italian-green), var(--italian-red));
+  background: hsl(var(--primary));
   border: none;
-  color: white;
+  color: hsl(var(--primary-foreground));
   padding: 12px 24px;
   border-radius: 12px;
   font-weight: 600;
@@ -106,7 +151,7 @@ html {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, hsl(var(--primary-foreground) / 0.2), transparent);
   transition: left 0.5s;
 }
 
@@ -116,24 +161,24 @@ html {
 
 .btn-modern:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 10px 25px hsl(var(--primary) / 0.3);
 }
 
 /* Glass Morphism Effect with Italian Colors */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: hsl(var(--surface) / 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(34, 197, 94, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(34, 197, 94, 0.37);
+  border: 1px solid hsl(var(--border) / 0.6);
+  box-shadow: 0 8px 32px 0 hsl(var(--primary) / 0.25);
 }
 
 .glass-dark {
-  background: rgba(34, 197, 94, 0.1);
+  background: hsl(var(--surface-2) / 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(34, 197, 94, 0.37);
+  border: 1px solid hsl(var(--border) / 0.7);
+  box-shadow: 0 8px 32px 0 hsl(var(--primary) / 0.25);
 }
 
 /* Responsive Typography */
@@ -154,19 +199,6 @@ html {
   .text-responsive-2xl { font-size: 3rem; }
   .text-responsive-3xl { font-size: 3.75rem; }
 }
-
-/* Italian Flag Color Utilities */
-.text-italian-green { color: var(--italian-green); }
-.text-italian-white { color: var(--italian-white); }
-.text-italian-red { color: var(--italian-red); }
-
-.bg-italian-green { background-color: var(--italian-green); }
-.bg-italian-white { background-color: var(--italian-white); }
-.bg-italian-red { background-color: var(--italian-red); }
-
-.border-italian-green { border-color: var(--italian-green); }
-.border-italian-white { border-color: var(--italian-white); }
-.border-italian-red { border-color: var(--italian-red); }
 
 /* Enhanced Responsive Spacing */
 @media (max-width: 640px) {
@@ -230,6 +262,14 @@ html {
 }
 
 @layer base {
+  html {
+    color: hsl(var(--foreground));
+    background-color: hsl(var(--background));
+  }
+  body {
+    color: hsl(var(--foreground));
+    background-color: hsl(var(--background));
+  }
   button {
     cursor: pointer;
   }

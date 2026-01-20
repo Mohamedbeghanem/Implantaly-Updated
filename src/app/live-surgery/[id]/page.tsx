@@ -14,7 +14,7 @@ export default async function LiveSurgeryPage({ params }: { params: Promise<{ id
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <main className="min-h-screen bg-background">
       <section className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
@@ -41,7 +41,7 @@ export default async function LiveSurgeryPage({ params }: { params: Promise<{ id
             <div className="space-y-6">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{liveSurgery.title}</h1>
-                <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                <p className="text-muted md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   {liveSurgery.description}
                 </p>
               </div>
@@ -91,16 +91,16 @@ export default async function LiveSurgeryPage({ params }: { params: Promise<{ id
                   </div>
                 )}
               </div>
-              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+              <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <h2 className="text-xl font-semibold">Register for this session</h2>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <p className="text-sm text-muted">
                       Complete registration on a dedicated page.
                     </p>
                   </div>
-                  <div className="text-left text-sm text-gray-500 dark:text-gray-400 sm:text-right">
-                    <div className="font-semibold text-gray-900 dark:text-white">Limited seats</div>
+                  <div className="text-left text-sm text-muted sm:text-right">
+                    <div className="font-semibold text-foreground">Limited seats</div>
                     Early confirmation is recommended.
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: ["class", '[data-theme="dark"]'],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -18,39 +18,27 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        surface: "hsl(var(--surface))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+        muted: "hsl(var(--muted))",
+        border: "hsl(var(--border))",
+        primary: "hsl(var(--primary))",
+        primaryForeground: "hsl(var(--primary-foreground))",
+        accent: "hsl(var(--accent))",
+        accentForeground: "hsl(var(--accent-foreground))",
+        destructive: "hsl(var(--destructive))",
+        ring: "hsl(var(--ring))",
+        surface2: "hsl(var(--surface-2))",
+        input: "hsl(var(--input))",
+        secondary: "hsl(var(--secondary))",
+        secondaryForeground: "hsl(var(--secondary-foreground))",
+        mutedForeground: "hsl(var(--muted-foreground))",
+        card: "hsl(var(--card))",
+        cardForeground: "hsl(var(--card-foreground))",
+        popover: "hsl(var(--popover))",
+        popoverForeground: "hsl(var(--popover-foreground))",
+        destructiveForeground: "hsl(var(--destructive-foreground))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -74,7 +62,7 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "logo-cloud": "logo-cloud 25s linear infinite",
+        "logo-cloud": "logo-cloud 10s linear infinite",
       },
     },
   },
@@ -84,16 +72,16 @@ module.exports = {
     function({ addUtilities }) {
       const newUtilities = {
         '.glass': {
-          'background': 'rgba(255, 255, 255, 0.8)',
+          'background': 'hsl(var(--surface) / 0.8)',
           'backdrop-filter': 'blur(20px)',
           '-webkit-backdrop-filter': 'blur(20px)',
-          'border': '1px solid rgba(255, 255, 255, 0.2)',
+          'border': '1px solid hsl(var(--border) / 0.6)',
         },
         '.glass-dark': {
-          'background': 'rgba(0, 0, 0, 0.8)',
+          'background': 'hsl(var(--surface-2) / 0.8)',
           'backdrop-filter': 'blur(20px)',
           '-webkit-backdrop-filter': 'blur(20px)',
-          'border': '1px solid rgba(255, 255, 255, 0.1)',
+          'border': '1px solid hsl(var(--border) / 0.5)',
         },
       }
       addUtilities(newUtilities)

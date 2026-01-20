@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,8 +25,8 @@ export function Navigation() {
   }, [isOpen])
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <div className="border-b border-gray-200/70">
+    <header className="sticky top-0 z-50 bg-surface shadow-sm">
+      <div className="border-b border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center">
             <Image
@@ -44,7 +45,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[15px] font-semibold text-gray-700 transition-colors hover:text-gray-900"
+                className="text-[15px] font-semibold text-foreground transition-colors hover:text-accent"
               >
                 {item.label}
               </Link>
@@ -52,20 +53,21 @@ export function Navigation() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <div className="flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1 text-xs font-semibold text-gray-600">
-              <Phone className="h-4 w-4 text-emerald-500" />
-              <span>+213 6661606706</span>
+            <div className="flex items-center gap-2 rounded-full border border-border bg-surface2 px-3 py-1 text-xs font-semibold text-muted">
+              <Phone className="h-4 w-4 text-primary" />
+              <span>07 702 223 85</span>
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primaryForeground shadow-sm transition hover:bg-primary/90"
             >
               Book Consultation
             </Link>
+            <ThemeToggle />
           </div>
 
           <button
-            className="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white p-2 text-gray-700 transition hover:border-gray-300 hover:text-gray-900 lg:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-border bg-surface p-2 text-foreground transition hover:border-border/80 hover:text-accent lg:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
@@ -77,9 +79,9 @@ export function Navigation() {
 
       {isOpen && (
         <div className="lg:hidden">
-          <div className="fixed inset-0 z-40 bg-black/60" onClick={() => setIsOpen(false)} />
-          <div className="fixed right-0 top-0 z-50 h-full w-full max-w-sm bg-white shadow-2xl">
-            <div className="flex items-center justify-between border-b border-gray-200 px-5 py-4">
+          <div className="fixed inset-0 z-40 bg-foreground/50" onClick={() => setIsOpen(false)} />
+          <div className="fixed right-0 top-0 z-50 h-full w-full max-w-sm bg-surface shadow-2xl">
+            <div className="flex items-center justify-between border-b border-border px-5 py-4">
               <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
                 <Image
                   src="/Altaacademy.svg"
@@ -92,7 +94,7 @@ export function Navigation() {
               </Link>
               <button
                 onClick={() => setIsOpen(false)}
-                className="rounded-full border border-gray-200 p-2 text-gray-700 transition hover:border-gray-300 hover:text-gray-900"
+                className="rounded-full border border-border p-2 text-foreground transition hover:border-border/80 hover:text-accent"
                 aria-label="Close menu"
               >
                 <X className="h-5 w-5" />
@@ -105,22 +107,25 @@ export function Navigation() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="rounded-2xl border border-gray-100 px-4 py-3 text-base font-semibold text-gray-700 transition hover:border-emerald-200 hover:bg-emerald-50 hover:text-emerald-700"
+                  className="rounded-2xl border border-border px-4 py-3 text-base font-semibold text-foreground transition hover:border-primary/40 hover:bg-surface2 hover:text-accent"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
 
-            <div className="mt-auto border-t border-gray-200 px-5 py-6">
+            <div className="mt-auto border-t border-border px-5 py-6">
+              <div className="mb-4">
+                <ThemeToggle />
+              </div>
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="inline-flex w-full items-center justify-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600"
+                className="inline-flex w-full items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primaryForeground shadow-sm transition hover:bg-primary/90"
               >
                 Book Consultation
               </Link>
-              <div className="mt-4 text-center text-xs text-gray-500">
+              <div className="mt-4 text-center text-xs text-muted">
                 Call us: +213 6661606706
               </div>
             </div>

@@ -47,9 +47,9 @@ const teamMembers: TeamMember[] = [
   },
    {
     id: '4',
-    name: 'Dr. Adel Kara',
-    role: 'Expert in Oral Implantology',
-    imageUrl: '/placeholder.svg',
+    name: 'Mr. Didier Crescenzo',
+    role: 'Prothesiste',
+    imageUrl: '/didier.jpg',
     socialLinks: {
       twitter: '#',
       linkedin: '#',
@@ -64,9 +64,20 @@ const teamMembers: TeamMember[] = [
       twitter: '#',
       linkedin: '#',
     },
-  },  {
+  },  
+  {
     id: '6',
     name: 'Dr. Farid Ouzrourou',
+    role: 'Expert in Oral Implantology',
+    imageUrl: '/placeholder.svg',
+    socialLinks: {
+      twitter: '#',
+      linkedin: '#',
+    },
+  },
+     {
+    id: '4',
+    name: 'Dr. Adel Kara',
     role: 'Expert in Oral Implantology',
     imageUrl: '/placeholder.svg',
     socialLinks: {
@@ -79,7 +90,7 @@ const teamMembers: TeamMember[] = [
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <div className="group bg-white h-[420px] w-80 flex-shrink-0 overflow-hidden rounded-xl shadow-sm transition-all hover:shadow-xl">
+    <div className="group h-[420px] w-80 flex-shrink-0 overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all hover:shadow-md">
       <div className="relative h-[280px] w-full overflow-hidden">
         <img
           src={member.imageUrl}
@@ -88,13 +99,13 @@ function TeamCard({ member }: { member: TeamMember }) {
         />
       </div>
       <div className="p-5">
-        <h3 className="mb-1 text-lg font-bold text-gray-900">{member.name}</h3>
-        <p className="text-blue-600 text-sm mb-3">{member.role}</p>
+        <h3 className="mb-1 text-lg font-bold text-foreground">{member.name}</h3>
+        <p className="text-sm text-accent mb-3">{member.role}</p>
         <div className="flex gap-x-4">
-          <a href={member.socialLinks.twitter} className="text-gray-400 hover:text-gray-600">
+          <a href={member.socialLinks.twitter} className="text-muted hover:text-accent">
             <Twitter size={20} />
           </a>
-          <a href={member.socialLinks.linkedin} className="text-gray-400 hover:text-gray-600">
+          <a href={member.socialLinks.linkedin} className="text-muted hover:text-accent">
             <Linkedin size={20} />
           </a>
         </div>
@@ -117,13 +128,13 @@ export default function TeamSlider() {
   }, []);
 
   return (
-    <section className="mx-auto max-w-7xl py-16 md:py-24 bg-white">
+    <section className="mx-auto max-w-7xl py-16 md:py-24 bg-background">
       <div className="container px-4 md:px-6">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Meet Our Expert Instructors
           </h2>
-          <p className="text-gray-600 mx-auto max-w-2xl md:text-lg">
+          <p className="text-muted mx-auto max-w-2xl md:text-lg">
             Our team of world-class instructors are dedicated to providing the best hands-on training.
           </p>
         </div>
@@ -148,7 +159,7 @@ export default function TeamSlider() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 rounded-full transition-all ${
-                  currentIndex === index ? 'w-8 bg-blue-600' : 'w-2 bg-gray-300 hover:bg-gray-400'
+                  currentIndex === index ? 'w-8 bg-accent' : 'w-2 bg-surface2 hover:bg-primary/30'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

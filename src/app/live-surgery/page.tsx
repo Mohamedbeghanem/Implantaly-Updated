@@ -10,7 +10,6 @@ import { LiveSurgerySession, liveSurgerySessions } from '@/lib/liveSurgery';
 import Link from 'next/link';
 import { Hero1 } from '@/components/hero1';
 import {Process1} from '@/components/process1';
-import {Cta10}  from '@/components/cta10';  
 import {Faq1} from '@/components/faq1';
 import { Feature43 } from '@/components/featurelive';
 import { Footer } from "@/components/footer"
@@ -102,7 +101,7 @@ export default function LiveSurgeryPage() {
         heading="Live Surgery Sessions"
         description="Witness live surgical procedures performed by world-renowned experts. Enhance your skills and knowledge by observing real-time cases."
         image={{
-          src: '/image00001.jpeg',
+          src: '/live-Sutgery.jpeg',
           alt: 'Live surgery session in progress',
         }}
       />
@@ -139,18 +138,6 @@ export default function LiveSurgeryPage() {
           )}
           <Feature43 />
           <Faq1 />
-           <Cta10
-      heading="Join Our Live Surgery Sessions Today!"
-      description="Don't miss out on the opportunity to learn from the best in the field. Sign up for our live surgery sessions and take your skills to the next level."
-      buttons={{
-        primary: {
-          text: "Sign Up Now",
-          url: "/signup",
-        },
-        secondary: {
-          text: "Learn More",
-          url: "/about-live-surgery",}}}
-    />
         </div>
       </section>
     <Footer />

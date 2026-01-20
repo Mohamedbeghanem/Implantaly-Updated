@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { Hero2 } from '@/components/hero2';
 import {Process2} from '@/components/process2';
 import {Process22} from '@/components/process22';
-import {Cta10}  from '@/components/cta10';  
 import {Faq2} from '@/components/faqworkshop';
 import { Footer } from "@/components/footer"
 import { Featureworkshop } from '@/components/featureworkshop';
@@ -14,15 +13,15 @@ import { Featureworkshop } from '@/components/featureworkshop';
 
 function WorkshopCardGrid({ session }: { session: DentalCourse }) {
   const complexityColors: Record<string, string> = {
-    Beginner: 'bg-green-100 text-green-700',
-    Intermediate: 'bg-blue-100 text-blue-700',
-    Advanced: 'bg-purple-100 text-purple-700',
+    Beginner: 'bg-primary text-primaryForeground',
+    Intermediate: 'bg-surface2 text-foreground',
+    Advanced: 'bg-accent text-accentForeground',
   };
   const complexity = (session.complexity || 'Beginner') as string;
 
   return (
     <Link href={`/workshops/${session.id}`}>
-      <div className="group bg-white overflow-hidden rounded-xl shadow-sm transition-all hover:shadow-xl">
+      <div className="group bg-surface overflow-hidden rounded-xl border border-border shadow-sm transition-all hover:shadow-md">
         <div className="relative h-[240px] w-full overflow-hidden">
           <img
             src={session.imageUrl}
@@ -34,9 +33,9 @@ function WorkshopCardGrid({ session }: { session: DentalCourse }) {
               {complexity}
             </span>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent" />
           <div className="absolute bottom-4 left-4 right-4">
-            <div className="text-white text-xs font-medium mb-1 flex items-center">
+            <div className="text-primaryForeground text-xs font-medium mb-1 flex items-center">
               <Award className="mr-1.5 h-4 w-4" />
               {session.category}
             </div>
@@ -44,37 +43,35 @@ function WorkshopCardGrid({ session }: { session: DentalCourse }) {
         </div>
 
         <div className="p-6">
-          <h3 className="mb-3 text-xl font-bold text-gray-900 line-clamp-1">{session.title}</h3>
-          <p className="text-gray-600 text-sm mb-4 line-clamp-2">{session.description}</p>
+          <h3 className="mb-3 text-xl font-bold text-foreground line-clamp-1">{session.title}</h3>
+          <p className="text-muted text-sm mb-4 line-clamp-2">{session.description}</p>
 
-          <div className="space-y-2 mb-4 text-sm text-gray-600">
+          <div className="space-y-2 mb-4 text-sm text-muted">
             {session.date && (
               <div className="flex items-center">
-                <Calendar className="mr-2 h-4 w-4 text-green-600" />
+                <Calendar className="mr-2 h-4 w-4 text-primary" />
                 {session.date}
               </div>
             )}
             {session.location && (
               <div className="flex items-center">
-                <MapPin className="mr-2 h-4 w-4 text-green-600" />
+                <MapPin className="mr-2 h-4 w-4 text-primary" />
                 {session.location}
               </div>
             )}
             <div className="flex items-center">
-              <Clock className="mr-2 h-4 w-4 text-green-600" />
+              <Clock className="mr-2 h-4 w-4 text-primary" />
               {session.duration}
             </div>
           </div>
 
-          <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+          <div className="pt-4 border-t border-border flex items-center justify-between">
             <div>
-              <p className="text-xs text-gray-500">Surgeon</p>
-              <p className="text-sm font-semibold text-gray-900">{session.instructor}</p>
+              <p className="text-xs text-muted">Surgeon</p>
+              <p className="text-sm font-semibold text-foreground">{session.instructor}</p>
             </div>
             <div className="text-right">
-              <button className="mt-2 text-white text-sm px-4 py-2 rounded-lg transition-colors">
-                <p className="text-2xl font-bold text-green-600">{session.price}</p>
-              </button>
+              <p className="text-2xl font-bold text-primary">{session.price}</p>
             </div>
           </div>
         </div>
@@ -93,17 +90,17 @@ export default function WorkshopsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
+    <div className="min-h-screen bg-background text-foreground">
       <Hero2
         heading="Alta Workshops"
         description="Les workshops Alta Academy sont organisés sous forme de formations pratiques intensives, orientées sur l’acquisition de gestes maîtrisés, de protocoles clairs et de résultats reproductibles."
         image={{
-          src: '/Masterclass-inoral4-4.jpeg',
+          src: '/image00044.jpeg',
           alt: 'Workshop session in progress',
         }}
       />
       {/* Filters Section */}
-      <section className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
+      <section className="sticky top-0 z-10 bg-surface border-b border-border shadow-sm">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl py-6">
           <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
             {/* Search */}
@@ -123,12 +120,12 @@ export default function WorkshopsPage() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">No sessions found matching your criteria.</p>
+              <p className="text-muted text-lg">No sessions found matching your criteria.</p>
               <button
                 onClick={() => {
                   setSearchQuery('');
                 }}
-                className="mt-4 text-blue-600 hover:text-green-700 font-medium"
+                className="mt-4 text-foreground hover:text-accent font-medium"
               >
                 Clear all filters
               </button>
@@ -136,18 +133,6 @@ export default function WorkshopsPage() {
           )}
           <Featureworkshop />
           <Faq2  />
-           <Cta10
-      heading="Join Our Workshops Today!"
-      description="Don't miss out on the opportunity to learn from the best in the field. Sign up for our workshops and take your skills to the next level."
-      buttons={{
-        primary: {
-          text: "Sign Up Now",
-          url: "/signup",
-        },
-        secondary: {
-          text: "Learn More",
-          url: "/about-workshops",}}}
-    />
         </div>
       </section>
     <Footer />

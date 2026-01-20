@@ -38,7 +38,7 @@ const Hero1 = ({
     },
   },
   image = {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+    src: "/live-Sutgery.jpeg",
     alt: "Hero section demo image showing interface components",
   },
 }: Hero1Props) => {

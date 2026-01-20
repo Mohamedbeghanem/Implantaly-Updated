@@ -16,7 +16,7 @@ export function AltaAcademyCourses() {
       level: "Beginner",
       price: "$2,500",
       features: ["Live demonstrations", "Case studies", "Hands-on practice", "Certification"],
-      gradient: "from-green-500 to-green-600",
+      gradient: "from-primary to-primary",
       icon: GraduationCap
     },
     {
@@ -28,7 +28,7 @@ export function AltaAcademyCourses() {
       level: "Advanced",
       price: "$3,200",
       features: ["Surgical planning", "3D imaging", "Advanced techniques", "Mentorship"],
-      gradient: "from-white to-gray-100",
+      gradient: "from-surface to-surface2",
       icon: BookOpen
     },
     {
@@ -40,7 +40,7 @@ export function AltaAcademyCourses() {
       level: "Intermediate",
       price: "$2,800",
       features: ["Digital workflows", "Prosthetic design", "Material selection", "Quality control"],
-      gradient: "from-red-500 to-red-600",
+      gradient: "from-accent to-accent",
       icon: Award
     },
     {
@@ -52,32 +52,32 @@ export function AltaAcademyCourses() {
       level: "Advanced",
       price: "$3,500",
       features: ["Full-arch planning", "Immediate loading", "Patient management", "Follow-up care"],
-      gradient: "from-green-400 to-green-500",
+      gradient: "from-primary to-primary",
       icon: Target
     }
   ]
 
   const stats = [
-    { number: "500+", label: "Students Trained", icon: Users, gradient: "from-green-500 to-green-600" },
-    { number: "25+", label: "Expert Instructors", icon: GraduationCap, gradient: "from-white to-gray-100" },
-    { number: "95%", label: "Success Rate", icon: Star, gradient: "from-red-500 to-red-600" },
-    { number: "50+", label: "Courses Available", icon: BookOpen, gradient: "from-green-400 to-green-500" }
+    { number: "500+", label: "Students Trained", icon: Users, gradient: "from-primary to-primary" },
+    { number: "25+", label: "Expert Instructors", icon: GraduationCap, gradient: "from-surface to-surface2" },
+    { number: "95%", label: "Success Rate", icon: Star, gradient: "from-accent to-accent" },
+    { number: "50+", label: "Courses Available", icon: BookOpen, gradient: "from-primary to-primary" }
   ]
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-green-50 via-white to-red-50 py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section className="relative w-full bg-background py-16 sm:py-20 lg:py-24 overflow-hidden">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0">
         {/* Italian flag inspired gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-green-100/20 via-white/10 to-red-100/20 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-surface/10 to-accent/5 animate-pulse"></div>
         
         {/* Floating geometric shapes with Italian colors */}
-        <div className="absolute top-20 left-4 sm:left-20 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-r from-green-400/10 to-green-500/10 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float"></div>
-        <div className="absolute top-40 right-4 sm:right-20 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-white/20 to-gray-200/20 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute -bottom-8 left-8 sm:left-40 w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-r from-red-400/10 to-red-500/10 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-20 left-4 sm:left-20 w-48 h-48 sm:w-72 sm:h-72 bg-primary/10 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-float"></div>
+        <div className="absolute top-40 right-4 sm:right-20 w-64 h-64 sm:w-96 sm:h-96 bg-surface2/40 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute -bottom-8 left-8 sm:left-40 w-56 h-56 sm:w-80 sm:h-80 bg-accent/10 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-float" style={{ animationDelay: '4s' }}></div>
         
         {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.02)_1px,transparent_1px)] bg-[size:30px_30px] sm:bg-[size:50px_50px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--primary)_/_0.03)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--primary)_/_0.03)_1px,transparent_1px)] bg-[size:30px_30px] sm:bg-[size:50px_50px]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,20 +85,20 @@ export function AltaAcademyCourses() {
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="space-y-4 sm:space-y-6 max-w-4xl mx-auto">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-green-500/20 via-white/20 to-red-500/20 backdrop-blur-xl rounded-full border-2 border-green-300 text-green-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6 animate-fade-in">
+            <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-surface2 backdrop-blur-xl rounded-full border border-border text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6 animate-fade-in">
               <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               Professional Dental Education
             </div>
             
             {/* Main Title */}
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight animate-fade-in-up">
-              <span className="bg-gradient-to-r from-green-600 via-green-700 to-red-600 bg-clip-text text-transparent">
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight animate-fade-in-up">
+              <span className="text-primary">
                 Our Courses
               </span>
             </h2>
             
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted leading-relaxed max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Comprehensive dental education programs designed to advance your career and skills in implantology
             </p>
           </div>
@@ -109,16 +109,16 @@ export function AltaAcademyCourses() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-4 sm:p-6 bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl border border-green-200 hover:bg-white hover:border-green-300 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-xl"
+              className="text-center p-4 sm:p-6 bg-surface/80 backdrop-blur-xl rounded-xl sm:rounded-2xl border border-border hover:bg-surface hover:border-border/80 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-sm"
               style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
-              <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${stat.gradient} rounded-xl sm:rounded-2xl mb-3 sm:mb-4 shadow-lg`}>
-                <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-gray-700" />
+              <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${stat.gradient} rounded-xl sm:rounded-2xl mb-3 sm:mb-4 shadow-sm`}>
+                <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-foreground" />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent mb-2">
+              <div className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm sm:text-base text-gray-600 font-medium">
+              <div className="text-sm sm:text-base text-muted font-medium">
                 {stat.label}
               </div>
             </div>
@@ -130,25 +130,25 @@ export function AltaAcademyCourses() {
           {courses.map((course, index) => (
             <Card
               key={index}
-              className="group p-6 sm:p-8 bg-white/90 backdrop-blur-xl border border-green-200 rounded-2xl sm:rounded-3xl hover:bg-white hover:border-green-300 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-xl"
+              className="group p-6 sm:p-8 bg-surface/90 backdrop-blur-xl border border-border rounded-2xl sm:rounded-3xl hover:bg-surface hover:border-border/80 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-sm"
               style={{ animationDelay: `${1.0 + index * 0.1}s` }}
             >
               {/* Course Header */}
               <div className="flex items-start justify-between mb-4 sm:mb-6">
-                <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${course.gradient} rounded-xl sm:rounded-2xl shadow-lg`}>
-                  <course.icon className="w-6 h-6 sm:w-8 sm:h-8 text-gray-700" />
+                <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${course.gradient} rounded-xl sm:rounded-2xl shadow-sm`}>
+                  <course.icon className="w-6 h-6 sm:w-8 sm:h-8 text-foreground" />
                 </div>
                 <div className="text-right">
-                  <div className="text-sm sm:text-base font-semibold text-green-600 mb-1">{course.level}</div>
-                  <div className="text-lg sm:text-xl font-bold text-green-700">{course.price}</div>
+                  <div className="text-sm sm:text-base font-semibold text-primary mb-1">{course.level}</div>
+                  <div className="text-lg sm:text-xl font-bold text-primary">{course.price}</div>
                 </div>
               </div>
 
               {/* Course Content */}
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
                 {course.title}
               </h3>
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
+              <p className="text-muted text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
                 {course.description}
               </p>
 
@@ -156,14 +156,14 @@ export function AltaAcademyCourses() {
               <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
                 {course.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center space-x-2 text-sm">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">{feature}</span>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                    <span className="text-muted">{feature}</span>
                   </div>
                 ))}
               </div>
 
               {/* Course Stats */}
-              <div className="flex items-center justify-between mb-4 sm:mb-6 text-sm sm:text-base text-gray-600">
+              <div className="flex items-center justify-between mb-4 sm:mb-6 text-sm sm:text-base text-muted">
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4" />
                   <span>{course.duration}</span>
@@ -173,13 +173,13 @@ export function AltaAcademyCourses() {
                   <span>{course.students} students</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                  <Star className="w-4 h-4 text-accent fill-current" />
                   <span>{course.rating}</span>
                 </div>
               </div>
 
               {/* CTA Button */}
-              <Button asChild className="w-full bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 py-3 sm:py-4 rounded-xl border-0 text-sm sm:text-base font-semibold">
+              <Button asChild className="w-full py-3 sm:py-4 rounded-xl text-sm sm:text-base font-semibold">
                 <Link href="/contact" className="flex items-center justify-center">
                   Enroll Now
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -191,23 +191,23 @@ export function AltaAcademyCourses() {
 
         {/* Enhanced CTA Section */}
         <div className="text-center animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-          <div className="max-w-3xl mx-auto p-8 sm:p-12 bg-gradient-to-r from-green-500/10 via-white/20 to-red-500/10 backdrop-blur-xl rounded-3xl border-2 border-green-200">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">
+          <div className="max-w-3xl mx-auto p-8 sm:p-12 bg-surface/80 backdrop-blur-xl rounded-3xl border border-border">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4 sm:mb-6">
               Ready to Advance Your Career?
             </h3>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+            <p className="text-muted text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
               Join hundreds of dental professionals who have transformed their careers with our comprehensive education programs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-              <Button size="lg" asChild className="group bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl border-0">
+              <Button size="lg" asChild className="group px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl">
                 <Link href="/contact" className="flex items-center">
                   Get Started Today
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </Button>
               
-              <Button variant="outline" size="lg" asChild className="group border-2 border-green-300 hover:bg-green-50 hover:border-green-400 transition-all duration-300 transform hover:scale-105 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl backdrop-blur-xl bg-white/80">
-                <Link href="/contact" className="flex items-center text-green-700">
+              <Button variant="outline" size="lg" asChild className="group px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-xl bg-surface">
+                <Link href="/contact" className="flex items-center text-foreground">
                   <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                   Schedule Consultation
                 </Link>

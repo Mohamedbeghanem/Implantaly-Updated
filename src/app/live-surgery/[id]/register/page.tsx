@@ -16,71 +16,71 @@ export default async function LiveSurgeryRegisterPage({
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <main className="min-h-screen bg-background">
       <section className="py-12 md:py-24 lg:py-28">
         <div className="container px-4 md:px-6">
           <div className="mx-auto grid max-w-4xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950 sm:p-8">
+            <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8">
               <div className="space-y-2">
-                <p className="text-xs uppercase tracking-[0.35em] text-emerald-500">Register</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-accent">Register</p>
                 <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
                   {liveSurgery.title}
                 </h1>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-muted">
                   Secure your seat for the live surgery session with our team.
                 </p>
               </div>
               <form className="mt-8 grid gap-4 sm:grid-cols-2">
-                <label className="grid gap-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+                <label className="grid gap-2 text-sm font-medium text-foreground">
                   Full name
                   <input
                     type="text"
                     name="fullName"
                     placeholder="Dr. Ahmed Ben"
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-100 dark:border-gray-800 dark:bg-gray-900 dark:text-white dark:focus:ring-emerald-900"
+                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                     required
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+                <label className="grid gap-2 text-sm font-medium text-foreground">
                   Email
                   <input
                     type="email"
                     name="email"
                     placeholder="doctor@email.com"
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-100 dark:border-gray-800 dark:bg-gray-900 dark:text-white dark:focus:ring-emerald-900"
+                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                     required
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+                <label className="grid gap-2 text-sm font-medium text-foreground">
                   Phone
                   <input
                     type="tel"
                     name="phone"
                     placeholder="+213 6xx xxx xxx"
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-100 dark:border-gray-800 dark:bg-gray-900 dark:text-white dark:focus:ring-emerald-900"
+                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                     required
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+                <label className="grid gap-2 text-sm font-medium text-foreground">
                   Specialty
                   <input
                     type="text"
                     name="specialty"
                     placeholder="Implantology"
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-100 dark:border-gray-800 dark:bg-gray-900 dark:text-white dark:focus:ring-emerald-900"
+                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-gray-700 dark:text-gray-200 sm:col-span-2">
+                <label className="grid gap-2 text-sm font-medium text-foreground sm:col-span-2">
                   Notes
                   <textarea
                     name="notes"
                     rows={4}
                     placeholder="Tell us about your goals or questions."
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm text-gray-900 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-100 dark:border-gray-800 dark:bg-gray-900 dark:text-white dark:focus:ring-emerald-900"
+                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   />
                 </label>
                 <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-muted">
                     By submitting, you agree to be contacted about this session.
                   </p>
                   <Button type="submit" size="lg" className="w-full sm:w-auto">
@@ -90,40 +90,40 @@ export default async function LiveSurgeryRegisterPage({
               </form>
             </div>
 
-            <aside className="space-y-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950">
+            <aside className="space-y-6 rounded-2xl border border-border bg-surface p-6 shadow-sm">
               <div>
                 <h2 className="text-lg font-semibold">Session details</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-muted">
                   Review the essentials before registering.
                 </p>
               </div>
-              <div className="space-y-4 text-sm text-gray-700 dark:text-gray-200">
+              <div className="space-y-4 text-sm text-foreground">
                 <div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Surgeon</div>
+                  <div className="text-xs text-muted">Surgeon</div>
                   <div className="font-medium">{liveSurgery.surgeon}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Date</div>
+                  <div className="text-xs text-muted">Date</div>
                   <div className="font-medium">{liveSurgery.date}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Duration</div>
+                  <div className="text-xs text-muted">Duration</div>
                   <div className="font-medium">{liveSurgery.duration}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Location</div>
+                  <div className="text-xs text-muted">Location</div>
                   <div className="font-medium">{liveSurgery.location}</div>
                 </div>
                 {liveSurgery.procedureType && (
                   <div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">Procedure</div>
+                    <div className="text-xs text-muted">Procedure</div>
                     <div className="font-medium">{liveSurgery.procedureType}</div>
                   </div>
                 )}
               </div>
-              <div className="border-t border-gray-200 pt-4 text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
+              <div className="border-t border-border pt-4 text-sm text-muted">
                 Need more info?{" "}
-                <Link href="/contact" className="font-medium text-emerald-500 hover:text-emerald-600">
+                <Link href="/contact" className="font-medium text-accent hover:text-accent/80">
                   Contact our team
                 </Link>
                 .
