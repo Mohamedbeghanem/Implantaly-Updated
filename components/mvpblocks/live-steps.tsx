@@ -2,14 +2,14 @@ import Image from "next/image";
 
 const LiveSteps = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white ">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div className="flex flex-col justify-center">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
+            <h2 className="text-3xl font-bold text-gray-800 ">
               How it works?
             </h2>
-            <p className="mt-4 text-gray-600 dark:text-gray-400">
+            <p className="mt-4 text-gray-600 ">
               Clarity gives you the blocks & components you need to create a
               truly professional website.
             </p>
@@ -30,10 +30,10 @@ const LiveSteps = () => {
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-500 text-2xl font-bold text-white">
               01
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+            <h3 className="text-xl font-semibold text-gray-800 ">
               Start with a great design
             </h3>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
+            <p className="mt-2 text-gray-600 ">
               Clarity gives you the blocks & components you need to create a
               website.
             </p>
@@ -42,10 +42,10 @@ const LiveSteps = () => {
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-500 text-2xl font-bold text-white">
               02
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+            <h3 className="text-xl font-semibold text-gray-800 ">
               Add clever content areas
             </h3>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
+            <p className="mt-2 text-gray-600 ">
               Clarity gives you the blocks & components you need to create a
               website.
             </p>
@@ -54,10 +54,10 @@ const LiveSteps = () => {
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-500 text-2xl font-bold text-white">
               03
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+            <h3 className="text-xl font-semibold text-gray-800 ">
               Easily update your site
             </h3>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
+            <p className="mt-2 text-gray-600 ">
               Clarity gives you the blocks & components you need to create a
               website.
             </p>
@@ -69,3 +69,4 @@ const LiveSteps = () => {
 };
 
 export default LiveSteps;
+

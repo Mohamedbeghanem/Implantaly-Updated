@@ -18,7 +18,7 @@ export default function ThemePreviewPage() {
           <p className="text-xs uppercase tracking-[0.35em] text-accent">Theme Preview</p>
           <h1 className="text-4xl font-semibold md:text-5xl">Italian Modern Tokens</h1>
           <p className="max-w-2xl text-muted">
-            Preview core UI primitives using the shared light/dark theme tokens.
+            Preview core UI primitives using the shared theme tokens.
           </p>
         </div>
 

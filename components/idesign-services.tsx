@@ -40,7 +40,7 @@ export function IDesignServices() {
   ]
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-20 bg-white ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-6">
@@ -63,8 +63,8 @@ export function IDesignServices() {
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
-                    <service.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  <div className="w-12 h-12 bg-blue-100  rounded-full flex items-center justify-center">
+                    <service.icon className="w-6 h-6 text-blue-600 " />
                   </div>
                 </div>
                 
@@ -105,3 +105,4 @@ export function IDesignServices() {
     </section>
   )
 }
+

@@ -68,7 +68,7 @@ export function AboutUs1() {
           <div className="space-y-6">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Alta Academy</h1>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
                 We are a leading dental education platform committed to advancing professional skills and knowledge. Our
                 mission is to provide the highest quality training to dental professionals worldwide.
               </p>
@@ -79,7 +79,7 @@ export function AboutUs1() {
                   <stat.icon className="h-8 w-8" />
                   <div>
                     <p className="text-2xl font-bold">{stat.value}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
+                    <p className="text-sm text-gray-500 ">{stat.label}</p>
                   </div>
                 </div>
               ))}
@@ -98,7 +98,7 @@ export function AboutUs1() {
         <div className="mt-16">
           <div className="space-y-2 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Why Choose Us?</h2>
-            <p className="max-w-[900px] mx-auto text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="max-w-[900px] mx-auto text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
               We offer a unique learning experience that combines theoretical knowledge with practical skills.
             </p>
           </div>
@@ -108,7 +108,7 @@ export function AboutUs1() {
                 <CardContent className="p-6">
                   <feature.icon className="h-8 w-8 mb-4" />
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-gray-500 dark:text-gray-400">{feature.description}</p>
+                  <p className="text-gray-500 ">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -118,3 +118,4 @@ export function AboutUs1() {
     </section>
   )
 }
+

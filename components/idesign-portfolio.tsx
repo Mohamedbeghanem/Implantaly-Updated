@@ -46,7 +46,7 @@ export function IDesignPortfolio() {
   ]
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="py-20 bg-gray-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-6">
@@ -68,7 +68,7 @@ export function IDesignPortfolio() {
                 />
               </div>
               <div className="p-6">
-                <div className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-2">
+                <div className="text-sm text-purple-600  font-medium mb-2">
                   {item.category}
                 </div>
                 <h3 className="font-heading font-bold text-xl mb-2 text-foreground">
@@ -98,3 +98,4 @@ export function IDesignPortfolio() {
     </section>
   )
 }
+

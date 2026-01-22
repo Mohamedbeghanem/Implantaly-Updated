@@ -34,7 +34,7 @@ export function IDesignHero() {
   ], [])
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-blue-50 via-white to-sky-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+    <section className="relative w-full bg-gradient-to-br from-blue-50 via-white to-sky-100    overflow-hidden">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_60%)]"></div>
@@ -49,7 +49,7 @@ export function IDesignHero() {
         {/* Main Hero Content */}
         <div className="text-center mb-16">
           <div className="space-y-6 max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-800 dark:text-blue-200 text-sm font-medium mb-4">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100  rounded-full text-blue-800  text-sm font-medium mb-4">
               <Box className="w-4 h-4 mr-2" />
               IDesign - 3D Dental Design Division
             </div>
@@ -96,7 +96,7 @@ export function IDesignHero() {
             </div>
             {/* Enhanced Floating Stats Card */}
             <div className="scale-in" style={{ animationDelay: '1s' }}>
-              <Card className="absolute -bottom-8 -left-8 p-8 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl border-0 border-gray-200/50 dark:border-gray-700/50">
+              <Card className="absolute -bottom-8 -left-8 p-8 bg-white/90  backdrop-blur-xl shadow-2xl border-0 border-gray-200/50 ">
                 <div className="flex items-center space-x-8">
                   <div className="text-center">
                     <div className="font-heading font-bold text-3xl text-foreground">1000+</div>
@@ -122,8 +122,8 @@ export function IDesignHero() {
                 className="fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                                 <Card className="p-8 text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-gray-200/50 dark:border-gray-700/50">
-                   <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
+                                 <Card className="p-8 text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 bg-white/80  backdrop-blur-lg border-gray-200/50 ">
+                   <div className="w-20 h-20 bg-blue-100  rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500 transform group-hover:scale-110">
                      <feature.icon className="w-10 h-10" />
                    </div>
                   <h3 className="font-heading font-bold text-xl mb-3 text-foreground">{feature.title}</h3>
@@ -137,3 +137,4 @@ export function IDesignHero() {
     </section>
   )
 }
+

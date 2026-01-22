@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class", '[data-theme="dark"]'],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -76,12 +75,6 @@ module.exports = {
           'backdrop-filter': 'blur(20px)',
           '-webkit-backdrop-filter': 'blur(20px)',
           'border': '1px solid hsl(var(--border) / 0.6)',
-        },
-        '.glass-dark': {
-          'background': 'hsl(var(--surface-2) / 0.8)',
-          'backdrop-filter': 'blur(20px)',
-          '-webkit-backdrop-filter': 'blur(20px)',
-          'border': '1px solid hsl(var(--border) / 0.5)',
         },
       }
       addUtilities(newUtilities)

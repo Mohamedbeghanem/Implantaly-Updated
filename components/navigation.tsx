@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -63,7 +62,6 @@ export function Navigation() {
             >
               Book Consultation
             </Link>
-            <ThemeToggle />
           </div>
 
           <button
@@ -115,9 +113,6 @@ export function Navigation() {
             </nav>
 
             <div className="mt-auto border-t border-border px-5 py-6">
-              <div className="mb-4">
-                <ThemeToggle />
-              </div>
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}

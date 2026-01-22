@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root,
-html[data-theme="light"] {
+:root {
   --background: 60 14% 98%;
   --surface: 0 0% 100%;
   --foreground: 0 0% 10%;
@@ -17,30 +16,6 @@ html[data-theme="light"] {
   --destructive: 356 72% 47%;
   --ring: 148 55% 41%;
   --radius: 12px;
-  --surface-2: var(--surface);
-  --secondary: var(--surface);
-  --secondary-foreground: var(--foreground);
-  --muted-foreground: var(--muted);
-  --input: var(--surface);
-  --card: var(--surface);
-  --card-foreground: var(--foreground);
-  --popover: var(--surface);
-  --popover-foreground: var(--foreground);
-}
-
-html[data-theme="dark"] {
-  --background: 180 6% 6%;
-  --surface: 180 6% 9%;
-  --foreground: 0 0% 96%;
-  --muted: 0 0% 71%;
-  --border: 0 0% 15%;
-  --primary: 152 100% 33%;
-  --primary-foreground: 0 0% 100%;
-  --accent: 355 78% 57%;
-  --accent-foreground: 0 0% 100%;
-  --success: 152 100% 33%;
-  --destructive: 355 78% 57%;
-  --ring: 152 100% 65%;
   --surface-2: var(--surface);
   --secondary: var(--surface);
   --secondary-foreground: var(--foreground);
@@ -173,13 +148,6 @@ html {
   box-shadow: 0 8px 32px 0 hsl(var(--primary) / 0.25);
 }
 
-.glass-dark {
-  background: hsl(var(--surface-2) / 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid hsl(var(--border) / 0.7);
-  box-shadow: 0 8px 32px 0 hsl(var(--primary) / 0.25);
-}
 
 /* Responsive Typography */
 @media (max-width: 640px) {

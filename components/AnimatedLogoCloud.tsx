@@ -49,7 +49,7 @@ const AnimatedLogoCloud = () => {
                   <img
                     key={key}
                     src={logo.url}
-                    className="h-20 w-auto max-w-[14rem] px-2 object-contain opacity-80"
+                    className="h-18 w-auto max-w-[14rem] px-2 object-contain brightness-0 "
                     alt={`${logo.name}`}
                   />
                 ))}
@@ -62,3 +62,4 @@ const AnimatedLogoCloud = () => {
 }
 
 export default AnimatedLogoCloud
+

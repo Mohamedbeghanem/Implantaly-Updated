@@ -62,7 +62,7 @@ const Timeline9 = () => {
               <Card className="my-5 border-none shadow-none">
                 <CardContent className="px-0 xl:px-2">
                   <div
-                    className="prose dark:prose-invert text-foreground"
+                    className="prose  text-foreground"
                     dangerouslySetInnerHTML={{ __html: entry.content }}
                   />
                 </CardContent>
@@ -76,3 +76,4 @@ const Timeline9 = () => {
 };
 
 export { Timeline9 };
+
