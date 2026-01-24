@@ -120,10 +120,12 @@ function validateRegistrationSubmission(
   if (!isNonEmptyString(data.phone)) return null
   if (!isNonEmptyString(data.experienceLevel)) return null
 
-  const experienceLevel = data.experienceLevel as RegistrationPayload["experienceLevel"]
-  if (!["beginner", "intermediate", "advanced"].includes(experienceLevel)) {
-    return null
-  }
+  const experienceLevel = data.experienceLevel;
+
+if (experienceLevel !== "beginner" && experienceLevel !== "intermediate" && experienceLevel !== "advanced") {
+  return null;
+}
+
 
   return {
     formId: data.formId.trim(),
