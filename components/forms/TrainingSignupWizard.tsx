@@ -11,6 +11,8 @@ import { Progress } from "@/components/ui/progress"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { toast } from "@/hooks/use-toast"
 import { cn } from "@/lib/utils"
+import { usePathname } from "next/navigation"
+import { useFormSubmit } from "@/src/hooks/useFormSubmit"
 
 type FormData = {
   profile: string[]
@@ -45,7 +47,11 @@ const INTEREST_OPTIONS = [
   "Photographie dentaire",
 ] as const
 
-const LEVEL_OPTIONS = ["Débutant", "Intermédiaire", "Avancé", "Expert"] as const
+const LEVEL_OPTIONS = [
+  { label: "Débutant", value: "beginner" },
+  { label: "Intermédiaire", value: "intermediate" },
+  { label: "Avancé", value: "advanced" },
+] as const
 
 const GOAL_OPTIONS = [
   "Améliorer la qualité du travail clinique / technique",
@@ -170,6 +176,9 @@ export default function TrainingSignupWizard() {
   const [formData, setFormData] = React.useState<FormData>(DEFAULT_DATA)
   const [showErrors, setShowErrors] = React.useState(false)
   const hasLoadedRef = React.useRef(false)
+  const [company, setCompany] = React.useState("")
+  const pathname = usePathname()
+  const { submit, isLoading, isError, error } = useFormSubmit()
 
   React.useEffect(() => {
     const stored = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null
@@ -229,16 +238,36 @@ export default function TrainingSignupWizard() {
     setCurrentStep((prev) => Math.max(prev - 1, 0))
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!isStepValid) {
       setShowErrors(true)
       return
     }
 
-    console.log("Inscription formations", formData)
-    toast({ title: "Envoyé ?" })
-    setShowErrors(false)
-    setCurrentStep(TOTAL_STEPS - 1)
+    const ok = await submit({
+      type: "registrationSubmission",
+      data: {
+        formId: "training-signup",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        profession: formData.profile.join(", "),
+        interests: formData.interests,
+        experienceLevel: formData.level,
+        message: formData.goals.join(" | "),
+        pagePath: pathname,
+        source: "website",
+        company,
+      },
+    })
+
+    if (ok) {
+      toast({ title: "Inscription envoyée" })
+      setShowErrors(false)
+      setCurrentStep(TOTAL_STEPS - 1)
+    } else {
+      toast({ title: "Échec de l'envoi", description: error ?? "Veuillez réessayer." })
+    }
   }
 
   const handleReset = () => {
@@ -273,6 +302,16 @@ export default function TrainingSignupWizard() {
       </CardHeader>
 
       <CardContent>
+        <input
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+          aria-hidden="true"
+          value={company}
+          onChange={(event) => setCompany(event.target.value)}
+        />
         <div key={currentStep} className="animate-fade-in-up">
           {currentStep === 0 && (
             <fieldset className="space-y-4" aria-invalid={showErrors && !!stepErrors.profile}>
@@ -346,15 +385,15 @@ export default function TrainingSignupWizard() {
                   const id = makeId("level", index)
                   return (
                     <label
-                      key={option}
+                      key={option.value}
                       htmlFor={id}
                       className={cn(
                         "flex items-center gap-3 rounded-lg border border-border bg-surface px-4 py-3 text-sm font-medium text-foreground shadow-sm transition hover:border-primary/30",
-                        formData.level === option && "border-primary/50"
+                        formData.level === option.value && "border-primary/50"
                       )}
                     >
-                      <RadioGroupItem id={id} value={option} aria-invalid={showErrors && !!stepErrors.level} />
-                      <span>{option}</span>
+                      <RadioGroupItem id={id} value={option.value} aria-invalid={showErrors && !!stepErrors.level} />
+                      <span>{option.label}</span>
                     </label>
                   )
                 })}
@@ -483,17 +522,20 @@ export default function TrainingSignupWizard() {
               Précédent
             </Button>
             {isLastFormStep ? (
-              <Button onClick={handleSubmit} className="w-full sm:w-auto">
-                Envoyer
+              <Button onClick={handleSubmit} className="w-full sm:w-auto" disabled={isLoading}>
+                {isLoading ? "Envoi..." : "Envoyer"}
               </Button>
             ) : (
-              <Button onClick={handleNext} className="w-full sm:w-auto">
+              <Button onClick={handleNext} className="w-full sm:w-auto" disabled={isLoading}>
                 Suivant
               </Button>
             )}
           </>
         )}
       </CardFooter>
+      {isError ? (
+        <p className="px-6 pb-6 text-sm text-destructive">{error}</p>
+      ) : null}
     </Card>
   )
 }

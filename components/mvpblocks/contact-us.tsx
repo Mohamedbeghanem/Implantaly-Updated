@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import {
   Mail,
   Phone,
@@ -12,35 +13,32 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslations } from '@/hooks/use-translations';
+import { useFormSubmit } from '@/src/hooks/useFormSubmit';
 
 export default function ContactUs2() {
-  const [state, setState] = React.useState({
-    name: '',
-    email: '',
-    message: '',
-    errors: {} as Record<string, string>,
-    submitting: false,
-    submitted: false,
-  });
-
   const { t } = useTranslations();
+  const pathname = usePathname();
+  const { submit, isLoading, isSuccess, isError, error } = useFormSubmit();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setState({ ...state, submitting: true });
-
-    // Console log only
-    console.log('Form submitted:', {
-      name: state.name,
-      email: state.email,
-      message: state.message,
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const ok = await submit({
+      type: 'formSubmission',
+      data: {
+        formId: 'contact',
+        name: String(formData.get('name') || '').trim(),
+        email: String(formData.get('email') || '').trim(),
+        message: String(formData.get('message') || '').trim(),
+        pagePath: pathname,
+        source: 'website',
+        company: String(formData.get('company') || '').trim(),
+      },
     });
-
-    setState({
-      ...state,
-      submitting: false,
-      submitted: true,
-    });
+    if (ok) {
+      form.reset();
+    }
   };
 
   return (
@@ -120,6 +118,14 @@ export default function ContactUs2() {
           className="space-y-6 rounded-2xl border border-border bg-surface p-6 shadow-sm"
           onSubmit={handleSubmit}
         >
+          <input
+            type="text"
+            name="company"
+            tabIndex={-1}
+            autoComplete="off"
+            className="hidden"
+            aria-hidden="true"
+          />
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium text-foreground">
               Name
@@ -146,9 +152,6 @@ export default function ContactUs2() {
               name="email"
               required
             />
-            {state.errors && state.errors.email && (
-              <p className="text-sm text-destructive">{state.errors.email}</p>
-            )}
           </div>
 
           <div className="space-y-2">
@@ -160,22 +163,24 @@ export default function ContactUs2() {
               id="message"
               placeholder="Enter your message"
               name="message"
+              required
             />
-            {state.errors && (state.errors as any).message && (
-              <p className="text-sm text-destructive">
-                {(state.errors as any).message}
-              </p>
-            )}
           </div>
 
           <button
             className="group flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
             type="submit"
-            disabled={state.submitting}
+            disabled={isLoading}
           >
-            {state.submitting ? 'Sending...' : 'Send message'}
+            {isLoading ? 'Sending...' : 'Send message'}
             <Send className="h-4 w-4" />
           </button>
+          {isSuccess ? (
+            <p className="text-sm text-foreground">Thanks! We will be in touch shortly.</p>
+          ) : null}
+          {isError ? (
+            <p className="text-sm text-destructive">{error}</p>
+          ) : null}
         </form>
       </div>
     </section>

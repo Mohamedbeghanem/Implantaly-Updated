@@ -1,7 +1,7 @@
 import { liveSurgerySessions } from "@/lib/liveSurgery"
 import { notFound } from "next/navigation"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { SessionRegistrationForm } from "@/components/forms/SessionRegistrationForm"
 
 export default async function LiveSurgeryRegisterPage({
   params,
@@ -30,64 +30,11 @@ export default async function LiveSurgeryRegisterPage({
                   Secure your seat for the live surgery session with our team.
                 </p>
               </div>
-              <form className="mt-8 grid gap-4 sm:grid-cols-2">
-                <label className="grid gap-2 text-sm font-medium text-foreground">
-                  Full name
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Dr. Ahmed Ben"
-                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                    required
-                  />
-                </label>
-                <label className="grid gap-2 text-sm font-medium text-foreground">
-                  Email
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="doctor@email.com"
-                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                    required
-                  />
-                </label>
-                <label className="grid gap-2 text-sm font-medium text-foreground">
-                  Phone
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="+213 6xx xxx xxx"
-                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                    required
-                  />
-                </label>
-                <label className="grid gap-2 text-sm font-medium text-foreground">
-                  Specialty
-                  <input
-                    type="text"
-                    name="specialty"
-                    placeholder="Implantology"
-                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  />
-                </label>
-                <label className="grid gap-2 text-sm font-medium text-foreground sm:col-span-2">
-                  Notes
-                  <textarea
-                    name="notes"
-                    rows={4}
-                    placeholder="Tell us about your goals or questions."
-                    className="w-full rounded-lg border border-border bg-surface px-4 py-2 text-sm text-foreground shadow-sm focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  />
-                </label>
-                <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-xs text-muted">
-                    By submitting, you agree to be contacted about this session.
-                  </p>
-                  <Button type="submit" size="lg" className="w-full sm:w-auto">
-                    Submit Registration
-                  </Button>
-                </div>
-              </form>
+              <SessionRegistrationForm
+                formId="live-surgery-registration"
+                sessionTitle={liveSurgery.title}
+                disclaimer="By submitting, you agree to be contacted about this session."
+              />
             </div>
 
             <aside className="space-y-6 rounded-2xl border border-border bg-surface p-6 shadow-sm">
