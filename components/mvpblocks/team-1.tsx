@@ -6,7 +6,7 @@
 
 import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search } from 'lucide-react';
-import { DentalCourse, dentalCourses } from '@/lib/workshops';
+import { DentalCourse, dentalCourses, getPrimaryPerson } from '@/lib/workshops';
 
 function CourseCardGrid({ course }: { course: DentalCourse }) {
   const levelColors: Record<DentalCourse['level'], string> = {
@@ -14,6 +14,7 @@ function CourseCardGrid({ course }: { course: DentalCourse }) {
     Intermediate: 'bg-blue-100 text-blue-700',
     Advanced: 'bg-purple-100 text-purple-700',
   };
+  const primaryPerson = getPrimaryPerson(course);
 
   return (
     <div className="group bg-white overflow-hidden rounded-xl shadow-sm transition-all hover:shadow-xl">
@@ -71,10 +72,12 @@ function CourseCardGrid({ course }: { course: DentalCourse }) {
         )}
 
         <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-          <div>
-            <p className="text-xs text-gray-500">Instructor</p>
-            <p className="text-sm font-semibold text-gray-900">{course.instructor}</p>
-          </div>
+          {primaryPerson && (
+            <div>
+              <p className="text-xs text-gray-500">{primaryPerson.roleLabel}</p>
+              <p className="text-sm font-semibold text-gray-900">{primaryPerson.name}</p>
+            </div>
+          )}
           <div className="text-right">
             <p className="text-2xl font-bold text-blue-600">{course.price}</p>
             <button className="mt-2 bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg transition-colors">

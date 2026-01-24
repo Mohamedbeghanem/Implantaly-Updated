@@ -57,10 +57,10 @@ export function Navigation() {
               <span>07 702 223 85</span>
             </div>
             <Link
-              href="/contact"
+              href="/live-surgery"
               className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primaryForeground shadow-sm transition hover:bg-primary/90"
             >
-              Book Consultation
+              Explore our Programs
             </Link>
           </div>
 

@@ -7,7 +7,7 @@
 import { useRef } from 'react';
 import { Calendar, Clock, MapPin, Award } from 'lucide-react';
 import { useScrollSlider } from '@/hooks/useScrollSlider';
-import { dentalCourses, DentalCourse } from '@/lib/workshops';
+import { dentalCourses, DentalCourse, getPrimaryPerson } from '@/lib/workshops';
 
 function CourseCard({ course }: { course: DentalCourse }) {
   const levelColors: Record<DentalCourse['level'], string> = {
@@ -15,6 +15,7 @@ function CourseCard({ course }: { course: DentalCourse }) {
     Intermediate: 'bg-blue-200 text-blue-800',
     Advanced: 'bg-purple-200 text-purple-800',
   };
+  const primaryPerson = getPrimaryPerson(course);
 
   return (
     <div className="group bg-white h-[480px] w-80 flex-shrink-0 overflow-hidden rounded-xl shadow-lg transition-all hover:shadow-2xl">
@@ -61,10 +62,12 @@ function CourseCard({ course }: { course: DentalCourse }) {
 
         <div className="mt-auto pt-4 border-t border-gray-200">
           <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Instructor</p>
-              <p className="text-md font-bold text-gray-900">{course.instructor}</p>
-            </div>
+            {primaryPerson && (
+              <div>
+                <p className="text-sm text-gray-600">{primaryPerson.roleLabel}</p>
+                <p className="text-md font-bold text-gray-900">{primaryPerson.name}</p>
+              </div>
+            )}
             <div className="text-right">
               <p className="text-2xl font-extrabold text-green-700">{course.price}</p>
             </div>

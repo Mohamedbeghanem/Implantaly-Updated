@@ -1,4 +1,4 @@
-import { dentalCourses } from "@/lib/workshops"
+import { dentalCourses, getPrimaryPerson } from "@/lib/workshops"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { SessionRegistrationForm } from "@/components/forms/SessionRegistrationForm"
@@ -14,6 +14,7 @@ export default async function WorkshopRegisterPage({
   if (!workshop) {
     notFound()
   }
+  const primaryPerson = getPrimaryPerson(workshop)
 
   return (
     <main className="min-h-screen bg-background">
@@ -45,10 +46,12 @@ export default async function WorkshopRegisterPage({
                 </p>
               </div>
               <div className="space-y-4 text-sm text-foreground">
-                <div>
-                  <div className="text-xs text-muted">Surgeon</div>
-                  <div className="font-medium">{workshop.surgeon}</div>
-                </div>
+                {primaryPerson && (
+                  <div>
+                    <div className="text-xs text-muted">{primaryPerson.roleLabel}</div>
+                    <div className="font-medium">{primaryPerson.name}</div>
+                  </div>
+                )}
                 <div>
                   <div className="text-xs text-muted">Date</div>
                   <div className="font-medium">{workshop.date}</div>

@@ -1,3 +1,10 @@
+export type CoursePersonRole = 'Instructor' | 'Speaker' | 'Surgeon' | 'Assistant' | 'Organizer';
+
+export interface CoursePerson {
+  name: string;
+  role: CoursePersonRole;
+}
+
 export interface DentalCourse {
   id: string;
   title: string;
@@ -11,8 +18,43 @@ export interface DentalCourse {
   location?: string;
   category: string;
   features?: string[];
-  surgeon?: string;
+  people?: CoursePerson[];
+  surgeon?: string; // Legacy fallback for older data sources.
   complexity?: string;
+}
+
+export function normalizeCoursePeople(course: DentalCourse): CoursePerson[] {
+  if (course.people && course.people.length > 0) {
+    return course.people;
+  }
+
+  const instructorName = course.instructor?.trim();
+  if (instructorName) {
+    return [{ name: instructorName, role: 'Instructor' }];
+  }
+
+  const surgeonName = course.surgeon?.trim();
+  if (surgeonName) {
+    return [{ name: surgeonName, role: 'Surgeon' }];
+  }
+
+  return [];
+}
+
+export function getPrimaryPerson(
+  course: DentalCourse,
+): { name: string; roleLabel: CoursePersonRole } | null {
+  const people = normalizeCoursePeople(course).filter((person) => person.name.trim());
+
+  if (people.length === 0) {
+    return null;
+  }
+
+  const primaryPerson = people[0];
+  return {
+    name: primaryPerson.name,
+    roleLabel: primaryPerson.role,
+  };
 }
 
 export const dentalCourses: DentalCourse[] = [
@@ -28,7 +70,7 @@ export const dentalCourses: DentalCourse[] = [
     date: '09-10/05/2025',
     location: 'Hayatt Regeancy Algiers Airport',
     category: 'Prosthodontics',
-    surgeon: 'Mr.Didier Crescenzo',
+    people: [{ name: 'Mr.Didier Crescenzo', role: 'Instructor' }],
     complexity: 'Intermediate',
   },
   {
@@ -43,7 +85,7 @@ export const dentalCourses: DentalCourse[] = [
     date: 'Coming Soon',
     location: 'Hayatt Regeancy Algiers Airport',
     category: 'Prosthodontics',
-    surgeon: 'Take a Guess!',
+    people: [{ name: 'Take a Guess!', role: 'Instructor' }],
     complexity: 'Intermediate',
   },
 ];

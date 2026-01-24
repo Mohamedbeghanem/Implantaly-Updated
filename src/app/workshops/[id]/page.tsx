@@ -1,4 +1,4 @@
-import { dentalCourses, DentalCourse } from '@/lib/workshops';
+import { dentalCourses, DentalCourse, getPrimaryPerson } from '@/lib/workshops';
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -16,6 +16,7 @@ export default async function WorkshopDetailPage({
   if (!Workshop) {
     return notFound();
   }
+  const primaryPerson = getPrimaryPerson(Workshop);
 
   return (
     <main className="min-h-screen bg-background">
@@ -39,13 +40,15 @@ export default async function WorkshopDetailPage({
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-6">
-                <div className="flex items-center space-x-2">
-                  <User className="h-6 w-6" />
-                  <div>
-                    <p className="font-semibold">Surgeon</p>
-                    <p>{Workshop.surgeon}</p>
+                {primaryPerson && (
+                  <div className="flex items-center space-x-2">
+                    <User className="h-6 w-6" />
+                    <div>
+                      <p className="font-semibold">{primaryPerson.roleLabel}</p>
+                      <p>{primaryPerson.name}</p>
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="flex items-center space-x-2">
                   <Clock className="h-6 w-6" />
                   <div>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search } from 'lucide-react';
-import { dentalCourses, DentalCourse } from '@/lib/workshops';
+import { dentalCourses, DentalCourse, getPrimaryPerson } from '@/lib/workshops';
 
 function CourseCardGrid({ course }: { course: DentalCourse }) {
   const levelColors: Record<DentalCourse['level'], string> = {
@@ -10,6 +10,7 @@ function CourseCardGrid({ course }: { course: DentalCourse }) {
     Intermediate: 'bg-blue-100 text-blue-700',
     Advanced: 'bg-purple-100 text-purple-700',
   };
+  const primaryPerson = getPrimaryPerson(course);
 
   return (
     <div className="group bg-white overflow-hidden rounded-xl shadow-sm transition-all hover:shadow-xl">
@@ -67,10 +68,12 @@ function CourseCardGrid({ course }: { course: DentalCourse }) {
         )}
 
         <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-          <div>
-            <p className="text-xs text-gray-400">Instructor</p>
-            <p className="text-sm font-semibold text-gray-800">{course.instructor}</p>
-          </div>
+          {primaryPerson && (
+            <div>
+              <p className="text-xs text-gray-400">{primaryPerson.roleLabel}</p>
+              <p className="text-sm font-semibold text-gray-800">{primaryPerson.name}</p>
+            </div>
+          )}
           <div className="text-right">
             <p className="text-xl font-bold text-blue-500">{course.price}</p>
           </div>

@@ -98,10 +98,10 @@ export function Footer() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/courses"
+                  href="/live-surgery"
                   className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primaryForeground shadow-sm transition hover:translate-y-[-1px] hover:bg-primary/90"
                 >
-                  Explore Courses
+                  Explore Our livesurgery Programs
                 </Link>
                 <Link
                   href="/contact"

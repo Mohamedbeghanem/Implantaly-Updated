@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Calendar, Clock, MapPin, Award, Filter, Search, Import } from 'lucide-react';
-import { DentalCourse, dentalCourses } from '@/lib/workshops';
+import { DentalCourse, dentalCourses, getPrimaryPerson } from '@/lib/workshops';
 import Link from 'next/link';
 import { Hero2 } from '@/components/hero2';
 import {Process2} from '@/components/process2';
@@ -18,6 +18,7 @@ function WorkshopCardGrid({ session }: { session: DentalCourse }) {
     Advanced: 'bg-accent text-accentForeground',
   };
   const complexity = (session.complexity || 'Beginner') as string;
+  const primaryPerson = getPrimaryPerson(session);
 
   return (
     <Link href={`/workshops/${session.id}`}>
@@ -66,10 +67,12 @@ function WorkshopCardGrid({ session }: { session: DentalCourse }) {
           </div>
 
           <div className="pt-4 border-t border-border flex items-center justify-between">
-            <div>
-              <p className="text-xs text-muted">Surgeon</p>
-              <p className="text-sm font-semibold text-foreground">{session.instructor}</p>
-            </div>
+            {primaryPerson && (
+              <div>
+                <p className="text-xs text-muted">{primaryPerson.roleLabel}</p>
+                <p className="text-sm font-semibold text-foreground">{primaryPerson.name}</p>
+              </div>
+            )}
             <div className="text-right">
               <p className="text-2xl font-bold text-primary">{session.price}</p>
             </div>

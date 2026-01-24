@@ -10,6 +10,7 @@ import {
   Facebook,
   Instagram,
   Send,
+  Linkedin,
 } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslations } from '@/hooks/use-translations';
@@ -64,7 +65,8 @@ export default function ContactUs2() {
                 <p className="text-muted">
                   {t('contact.info.emailLabel') || 'Email to us at'}
                 </p>
-                <p className="text-base text-foreground">subha9.5roy350@gmail.com</p>
+                <p className="text-base text-foreground">altaacademy@implantaly.com</p>
+                <p className="text-base text-foreground">altaacademybyimplantaly@gmail.com</p>
               </div>
             </div>
 
@@ -76,7 +78,7 @@ export default function ContactUs2() {
                 <p className="text-muted">
                   {t('contact.info.phoneLabel') || 'Call us at'}
                 </p>
-                <p className="text-base text-foreground">XXXXX XXXXX</p>
+                <p className="text-base text-foreground">+213 6661606706</p>
               </div>
             </div>
 
@@ -89,7 +91,7 @@ export default function ContactUs2() {
                   {t('contact.info.locationLabel') || 'Location at'}
                 </p>
                 <p className="text-base text-foreground">
-                  Techno Main Salt Lake, Sector-V, Kolkata-700091
+                  Alger, Algeria
                 </p>
               </div>
             </div>
@@ -100,7 +102,7 @@ export default function ContactUs2() {
               {t('contact.info.title') || 'Connect with Us'}
             </p>
             <div className="flex flex-wrap gap-3">
-              {[Twitter, Facebook, Instagram, Github].map((Icon, index) => (
+              {[Linkedin, Facebook, Instagram,].map((Icon, index) => (
                 <Link
                   key={index}
                   prefetch={false}
