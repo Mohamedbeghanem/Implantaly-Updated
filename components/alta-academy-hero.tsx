@@ -2,27 +2,29 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { GraduationCap,TrendingUpIcon,BookOpen, Users, Award, ArrowRight, Play, Star, TrendingUp, CheckCircle, Target,Hand,Activity,Video } from "lucide-react"
+import { ArrowRight, CheckCircle, HeartPulse, ShieldCheck, Sparkles, Stethoscope } from "lucide-react"
 import Link from "next/link"
+import { useTranslations } from "@/hooks/use-translations"
 
 export function AltaAcademyHero() {
+  const { t } = useTranslations()
   const features = [
     {
-      icon: Target,
-      title: "Our Mission",
-      description: "deliver high-level clinical training through Live Surgery and hands-on workshops, providing immediately applicable skills and shaping confident, fully operational practitioners.",
+      icon: Stethoscope,
+      title: t("home.hero.features.implantology.title"),
+      description: t("home.hero.features.implantology.description"),
       gradient: "from-surface to-surface2"
     },
     {
-      icon: Hand,
-      title: "Hands-on Training",
-      description: "provide immersive, practice-driven learning through guided clinical workshops, allowing participants to master techniques directly on models and real clinical scenarios. Our goal is to build precise, confident practitioners through structured, step-by-step hands-on experience.",
+      icon: Sparkles,
+      title: t("home.hero.features.cosmetic.title"),
+      description: t("home.hero.features.cosmetic.description"),
       gradient: "from-surface to-surface2"
     },
     {
-      icon: Video,
-      title: "Live Surgery",
-      description: "provide direct immersion in real clinical procedures, allowing participants to observe, interact, and learn in real time alongside expert surgeons.Our goal is to deliver reliable, modern, and immediately applicable techniques through an authentic, guided surgical experience.",
+      icon: ShieldCheck,
+      title: t("home.hero.features.patientFirst.title"),
+      description: t("home.hero.features.patientFirst.description"),
       gradient: "from-surface to-surface2"
     }
   ]
@@ -46,37 +48,37 @@ export function AltaAcademyHero() {
           <div className="space-y-8 max-w-5xl mx-auto">
             {/* Badge */}
             <div className="inline-flex items-center rounded-full border border-border bg-surface2 px-6 py-3 text-sm font-medium text-accent mb-6 animate-fade-in">
-              <TrendingUpIcon className="w-4 h-4 mr-2" />
-              Alta Academy by Implantaly
+              <HeartPulse className="w-4 h-4 mr-2" />
+              {t("home.hero.badge")}
             </div>
             
             {/* Main Title */}
             <h1 className="font-bold text-3xl md:text-6xl lg:text-5xl xl:text-6xl text-foreground leading-tight animate-fade-in-up">
               <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
-                Specialized in Live Surgery
+                {t("home.hero.titleLine1")}
               </span>
               <br />
-              <span className="text-foreground">Dedicated to shaping Tomorrow`s Experts</span>
+              <span className="text-foreground">{t("home.hero.titleLine2")}</span>
             </h1>
             
             {/* Subtitle */}
             <p className="text-xl lg:text-2xl text-muted leading-relaxed max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                Live Surgery is an immersive educational method that allows participants to observe real-time surgical procedures performed by expert clinicians. It provides immediate insight into operative decision-making, technical protocols, and real clinical variations.
+                {t("home.hero.subtitle")}
             </p>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <Button size="lg" asChild className="group bg-primary text-primaryForeground shadow-sm transition-all duration-300 transform hover:scale-105 px-10 py-4 text-lg font-semibold rounded-xl border-0 hover:bg-primary/90">
-                <Link href="/live-surgery" className="flex items-center">
-                  Explore our Lives
+                <Link href="/contact" className="flex items-center">
+                  {t("home.hero.ctaPrimary")}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </Button>
               
               <Button variant="outline" size="lg" asChild className="group border-2 border-border bg-surface transition-all duration-300 transform hover:scale-105 px-10 py-4 text-lg font-semibold rounded-xl hover:bg-surface2">
-                <Link href="/contact" className="flex items-center text-foreground">
-                  <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-                  Learn More via Whatsapp
+                <Link href="/features" className="flex items-center text-foreground">
+                  <Sparkles className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
+                  {t("home.hero.ctaSecondary")}
                 </Link>
               </Button>
             </div>
@@ -85,15 +87,15 @@ export function AltaAcademyHero() {
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-12 pt-12 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-primary" />
-                <span className="text-muted font-medium">Excellence in Live Surgery</span>
+                <span className="text-muted font-medium">{t("home.hero.trustItems.0")}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-primary" />
-                <span className="text-muted font-medium">Mastery Through Hands-On Practice</span>
+                <span className="text-muted font-medium">{t("home.hero.trustItems.1")}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-primary" />
-                <span className="text-muted font-medium">Results-Driven Education</span>
+                <span className="text-muted font-medium">{t("home.hero.trustItems.2")}</span>
               </div>
             </div>
           </div>

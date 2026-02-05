@@ -31,7 +31,7 @@ export default async function LiveSurgeryPage({ params }: { params: Promise<{ id
                 <ul className="grid gap-2">
                   {liveSurgery.includedInPrice?.map((item, index) => (
                     <li key={index} className="flex items-center space-x-2">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <CheckCircle className="h-5 w-5 text-neutral-700" />
                       <span>{item}</span>
                     </li>
                   ))}

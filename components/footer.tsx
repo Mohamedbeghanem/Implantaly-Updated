@@ -11,26 +11,27 @@ import {
   Phone,
   Users,
 } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
+import { useTranslations } from "@/hooks/use-translations"
 
 export function Footer() {
+  const { t } = useTranslations()
   const year = new Date().getFullYear()
 
   const quickLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Live Surgery", href: "/live-surgery" },
-    { name: "Workshops", href: "/workshops" },
-    { name: "Contact", href: "/contact" },
+    { name: t("footer.links.home"), href: "/" },
+    { name: t("footer.links.liveSurgery"), href: "/live-surgery" },
+    { name: t("footer.links.services"), href: "/features" },
+    { name: t("footer.links.about"), href: "/about" },
+    { name: t("footer.links.contact"), href: "/contact" },
   ]
 
   const programs = [
-    "Live Surgery Sessions",
-    "Hands-On Prosthetic Workshops",
-    "Clinical Conferences & Masterclasses",
-    "Implantology Training Programs",
-    "Digital Dentistry & Treatment Planning",
+    t("footer.servicesList.0"),
+    t("footer.servicesList.1"),
+    t("footer.servicesList.2"),
+    t("footer.servicesList.3"),
+    t("footer.servicesList.4"),
   ]
 
   const contactInfo = [
@@ -49,14 +50,14 @@ export function Footer() {
     {
       icon: Mail,
       label: "Primary Email",
-      value: "altaacademy@implantaly.com",
-      href: "mailto:altaacademy@implantaly.com",
+      value: "contact@implantaly.com",
+      href: "mailto:contact@implantaly.com",
     },
     {
       icon: Mail,
       label: "Secondary Email",
-      value: "altaacademybyimplantaly@gmail.com",
-      href: "mailto:altaacademybyimplantaly@gmail.com",
+      value: "appointments@implantaly.com",
+      href: "mailto:appointments@implantaly.com",
     },
     {
       icon: MapPin,
@@ -88,26 +89,26 @@ export function Footer() {
           <div className="rounded-3xl border border-border bg-gradient-to-br from-surface/90 via-surface/70 to-surface/40 p-6 backdrop-blur-sm md:p-8">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-accent">Alta Academy</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-accent">{t("footer.badge")}</p>
                 <h2 className="mt-3 text-2xl font-semibold text-foreground md:text-3xl">
-                  Train with expert surgeons and turn technique into confidence.
+                  {t("footer.cta.title")}
                 </h2>
                 <p className="mt-2 text-sm text-muted">
-                  Hands-on courses, mentoring, and clinical insights designed to level up your practice.
+                  {t("footer.cta.subtitle")}
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/live-surgery"
+                  href="/contact"
                   className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primaryForeground shadow-sm transition hover:translate-y-[-1px] hover:bg-primary/90"
                 >
-                  Explore Our livesurgery Programs
+                  {t("footer.cta.primary")}
                 </Link>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/60 hover:text-accent"
                 >
-                  Talk to Admissions
+                  {t("footer.cta.secondary")}
                 </Link>
               </div>
             </div>
@@ -120,16 +121,16 @@ export function Footer() {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3">
-                <Image
-                  src="/Altaacademy.svg"
-                  alt="Alta Academy logo"
-                  width={240}
-                  height={72}
-                  className="h-14 w-auto"
-                />
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primaryForeground text-lg font-semibold">
+                  ID
+                </div>
+                <div>
+                  <div className="text-lg font-semibold text-foreground">Implantaly</div>
+                  <div className="text-xs uppercase tracking-[0.35em] text-muted">Dental Clinic</div>
+                </div>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted">
-                A focused dental education hub for implantology and advanced clinical practice.
+                {t("footer.description")}
               </p>
               <div className="mt-6 flex items-center gap-3">
                 {socialLinks.map((social) => (
@@ -147,7 +148,7 @@ export function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">Quick Links</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">{t("footer.headings.quickLinks")}</h3>
               <ul className="mt-5 space-y-3 text-sm">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
@@ -165,7 +166,7 @@ export function Footer() {
 
             {/* Programs */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">Programs</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">{t("footer.headings.services")}</h3>
               <ul className="mt-5 space-y-3 text-sm">
                 {programs.map((program, index) => (
                   <li key={index}>
@@ -180,7 +181,7 @@ export function Footer() {
 
             {/* Contact Information */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">Contact</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-accent">{t("footer.headings.contact")}</h3>
               <div className="mt-5 space-y-4 text-sm">
                 {contactInfo.map((contact, index) => (
                   <div key={index} className="flex items-start space-x-3">
@@ -217,27 +218,27 @@ export function Footer() {
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
             <div className="flex flex-col items-start justify-between gap-4 text-sm md:flex-row md:items-center">
               <div className="text-muted">
-                (c) {year} Alta Academy by Implantaly. All rights reserved.
+                (c) {year} {t("footer.copyright")}
               </div>
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
                 <div className="flex items-center gap-2 rounded-full border border-border px-3 py-1">
                   <Users className="h-4 w-4 text-primary" />
-                  200+ alumni
+                  {t("footer.badges.0")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full border border-border px-3 py-1">
                   <Award className="h-4 w-4 text-primary" />
-                  Certified programs
+                  {t("footer.badges.1")}
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-4 text-sm">
                 <Link href="/privacy" className="text-muted transition-colors hover:text-accent">
-                  Privacy Policy
+                  {t("footer.links.privacy")}
                 </Link>
                 <Link href="/terms" className="text-muted transition-colors hover:text-accent">
-                  Terms of Service
+                  {t("footer.links.terms")}
                 </Link>
                 <Link href="/sitemap" className="text-muted transition-colors hover:text-accent">
-                  Sitemap
+                  {t("footer.links.sitemap")}
                 </Link>
               </div>
             </div>

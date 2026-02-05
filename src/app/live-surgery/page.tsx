@@ -13,13 +13,15 @@ import {Process1} from '@/components/process1';
 import {Faq1} from '@/components/faq1';
 import { Feature43 } from '@/components/featurelive';
 import { Footer } from "@/components/footer"
+import { useTranslations } from '@/hooks/use-translations';
 
 
 function LiveSurgeryCardGrid({ session }: { session: LiveSurgerySession }) {
+  const { t } = useTranslations();
   const complexityColors: Record<string, string> = {
-    Beginner: 'bg-green-100 text-green-700',
-    Intermediate: 'bg-blue-100 text-blue-700',
-    Advanced: 'bg-purple-100 text-purple-700',
+    Beginner: 'bg-neutral-100 text-neutral-700',
+    Intermediate: 'bg-neutral-200 text-neutral-800',
+    Advanced: 'bg-neutral-300 text-neutral-900',
   };
   const complexity = (session.complexity || 'Beginner') as string;
 
@@ -53,30 +55,30 @@ function LiveSurgeryCardGrid({ session }: { session: LiveSurgerySession }) {
           <div className="space-y-2 mb-4 text-sm text-gray-600">
             {session.date && (
               <div className="flex items-center">
-                <Calendar className="mr-2 h-4 w-4 text-green-600" />
+                <Calendar className="mr-2 h-4 w-4 text-neutral-700" />
                 {session.date}
               </div>
             )}
             {session.location && (
               <div className="flex items-center">
-                <MapPin className="mr-2 h-4 w-4 text-green-600" />
+                <MapPin className="mr-2 h-4 w-4 text-neutral-700" />
                 {session.location}
               </div>
             )}
             <div className="flex items-center">
-              <Clock className="mr-2 h-4 w-4 text-green-600" />
+              <Clock className="mr-2 h-4 w-4 text-neutral-700" />
               {session.duration}
             </div>
           </div>
 
           <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
             <div>
-              <p className="text-xs text-gray-500">Surgeon</p>
+              <p className="text-xs text-gray-500">{t("liveSurgery.card.surgeon")}</p>
               <p className="text-sm font-semibold text-gray-900">{session.surgeon}</p>
             </div>
             <div className="text-right">
               <button className="mt-2 text-white text-sm px-4 py-2 rounded-lg transition-colors">
-                <p className="text-2xl font-bold text-green-600">{session.price}</p>
+                <p className="text-2xl font-bold text-neutral-900">{session.price}</p>
               </button>
             </div>
           </div>
@@ -89,6 +91,7 @@ function LiveSurgeryCardGrid({ session }: { session: LiveSurgerySession }) {
 
 export default function LiveSurgeryPage() {
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const { t } = useTranslations();
 
   const filteredSessions = liveSurgerySessions.filter((session: LiveSurgerySession) => {
     return session.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -98,11 +101,11 @@ export default function LiveSurgeryPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <Hero1
-        heading="Live Surgery Sessions"
-        description="Witness live surgical procedures performed by world-renowned experts. Enhance your skills and knowledge by observing real-time cases."
+        heading={t("liveSurgery.hero.title")}
+        description={t("liveSurgery.hero.subtitle")}
         image={{
           src: '/live-Sutgery.jpeg',
-          alt: 'Live surgery session in progress',
+          alt: t("liveSurgery.hero.imageAlt"),
         }}
       />
       {/* Filters Section */}
@@ -125,14 +128,14 @@ export default function LiveSurgeryPage() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">No sessions found matching your criteria.</p>
+              <p className="text-gray-500 text-lg">{t("liveSurgery.empty")}</p>
               <button
                 onClick={() => {
                   setSearchQuery('');
                 }}
-                className="mt-4 text-blue-600 hover:text-blue-700 font-medium"
+                className="mt-4 text-neutral-700 hover:text-neutral-900 font-medium"
               >
-                Clear all filters
+                {t("liveSurgery.clearFilters")}
               </button>
             </div>
           )}

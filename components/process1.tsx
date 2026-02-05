@@ -1,27 +1,28 @@
+"use client";
+
 import { Asterisk, CornerDownRight } from "lucide-react";
 import React from "react";
 
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "@/hooks/use-translations";
 
 const Process1 = () => {
+  const { t } = useTranslations();
   const process = [
     {
       step: "01",
-      title: "Surgical Protocol Briefing",
-      description:
-        "A structured, slide-based presentation covering indications, case selection, workflow, and essential surgical principles.",
+      title: t("liveSurgery.process.steps.0.title"),
+      description: t("liveSurgery.process.steps.0.description"),
     },
     {
       step: "02",
-      title: "Live Surgical Execution",
-      description:
-        "Participants observe the procedure in real time with direct interaction—asking questions and understanding every clinical step as it unfolds.",
+      title: t("liveSurgery.process.steps.1.title"),
+      description: t("liveSurgery.process.steps.1.description"),
     },
     {
       step: "03",
-      title: "Clinical Debrief & Takeaways",
-      description:
-        "A focused case review highlighting clinical reasoning, success factors, potential pitfalls, and actionable insights for immediate application",
+      title: t("liveSurgery.process.steps.2.title"),
+      description: t("liveSurgery.process.steps.2.description"),
     },
   ];
 
@@ -31,20 +32,19 @@ const Process1 = () => {
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-6 lg:gap-20">
           <div className="top-10 col-span-2 h-fit w-fit gap-3 space-y-7 py-8 lg:sticky">
             <div className="relative w-fit text-5xl font-semibold tracking-tight lg:text-7xl">
-              {" "}
-              <h1 className="w-fit">Our Process</h1>
-              <Asterisk className="absolute -right-2 -top-2 size-5 text-red-500 md:size-10 lg:-right-14" />
+              <h1 className="w-fit">{t("liveSurgery.process.title")}</h1>
+              <Asterisk className="absolute -right-2 -top-2 size-5 text-foreground/70 md:size-10 lg:-right-14" />
             </div>
             <p className="text-foreground/50 text-base">
-              Our Live Surgery sessions offer participants a direct and structured learning experience. Each training blends theoretical clarity, real-time surgical observation, and expert interaction to ensure a complete understanding of the technique.
+              {t("liveSurgery.process.subtitle")}
             </p>
 
             <Button
               variant="ghost"
               className="flex items-center justify-start gap-2"
             >
-              <CornerDownRight className="text-red-500" />
-              Get in touch
+              <CornerDownRight className="text-foreground/70" />
+              {t("liveSurgery.process.cta")}
             </Button>
           </div>
           <ul className="lg:pl-22 relative col-span-4 w-full">
@@ -58,7 +58,7 @@ const Process1 = () => {
                 <div className="bg-muted flex size-12 items-center justify-center px-4 py-1 tracking-tighter">
                   0{index + 1}
                 </div>
-                <div className="">
+                <div>
                   <h3 className="mb-4 text-2xl font-semibold tracking-tighter lg:text-3xl">
                     {step.title}
                   </h3>
@@ -78,6 +78,7 @@ export { Process1 };
 const Illustration = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
+      className="text-foreground/70"
       width="22"
       height="20"
       viewBox="0 0 22 20"
@@ -90,7 +91,7 @@ const Illustration = (props: React.SVGProps<SVGSVGElement>) => {
         y1="2.57422"
         x2="21.5762"
         y2="2.57422"
-        stroke="#FF0000"
+        stroke="currentColor"
         strokeWidth="4"
       />
       <line
@@ -98,7 +99,7 @@ const Illustration = (props: React.SVGProps<SVGSVGElement>) => {
         y1="19.624"
         x2="19.5762"
         y2="4.57422"
-        stroke="#FF0000"
+        stroke="currentColor"
         strokeWidth="4"
       />
     </svg>

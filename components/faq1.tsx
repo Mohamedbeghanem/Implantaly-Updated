@@ -1,9 +1,12 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useTranslations } from "@/hooks/use-translations";
 
 interface FaqItem {
   id: string;
@@ -17,54 +20,51 @@ interface Faq1Props {
 }
 
 const Faq1 = ({
-  heading = "Frequently asked questions",
-  items = [
+  heading,
+  items,
+}: Faq1Props) => {
+  const { t } = useTranslations();
+  const resolvedHeading = heading ?? t("liveSurgery.faq.title");
+  const resolvedItems = items ?? [
     {
       id: "faq-1",
-      question: "Where do our live sessions take place?",
-      answer:
-        "In modern dental clinics, fully equipped with the latest digital and surgical technologies.",
+      question: t("liveSurgery.faq.items.0.q"),
+      answer: t("liveSurgery.faq.items.0.a"),
     },
     {
       id: "faq-2",
-      question: "Who are our live sessions for?",
-      answer:
-        "Dentists, implantologists, and practitioners looking to refine their clinical and digital skills.",
+      question: t("liveSurgery.faq.items.1.q"),
+      answer: t("liveSurgery.faq.items.1.a"),
     },
     {
       id: "faq-3",
-      question: "What topics are covered during the live sessions?",
-      answer:
-        "Advanced implantology, guided surgery, LID flap, immediate extraction–implant placement, soft tissue management, digital prosthetics, and CAD/CAM workflows.",
+      question: t("liveSurgery.faq.items.2.q"),
+      answer: t("liveSurgery.faq.items.2.a"),
     },
     {
       id: "faq-4",
-      question: "Are the procedures performed under real clinical conditions?",
-      answer:
-        "Yes. All surgeries are carried out in real clinical settings, on real patients, with live transmission.",
+      question: t("liveSurgery.faq.items.3.q"),
+      answer: t("liveSurgery.faq.items.3.a"),
     },
     {
       id: "faq-5",
-      question: "Can participants interact during the live session?",
-      answer:
-        "Absolutely. Participants can ask questions in real time and interact directly with the experts.",
+      question: t("liveSurgery.faq.items.4.q"),
+      answer: t("liveSurgery.faq.items.4.a"),
     },
     {
       id: "faq-6",
-      question: "Do participants receive educational material or a certificate?",
-      answer:
-        "Yes. Each participant receives structured educational support and a certificate of attendance.",
+      question: t("liveSurgery.faq.items.5.q"),
+      answer: t("liveSurgery.faq.items.5.a"),
     },
-  ],
-}: Faq1Props) => {
+  ];
   return (
     <section className="py-32">
       <div className="container max-w-3xl">
         <h1 className="mb-4 text-3xl font-semibold md:mb-11 md:text-4xl">
-          {heading}
+          {resolvedHeading}
         </h1>
         <Accordion type="single" collapsible>
-          {items.map((item, index) => (
+          {resolvedItems.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger className="font-semibold hover:no-underline">
                 {item.question}

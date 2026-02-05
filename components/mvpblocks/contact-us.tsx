@@ -30,6 +30,7 @@ export default function ContactUs2() {
         formId: 'contact',
         name: String(formData.get('name') || '').trim(),
         email: String(formData.get('email') || '').trim(),
+        phone: String(formData.get('phone') || '').trim(),
         message: String(formData.get('message') || '').trim(),
         pagePath: pathname,
         source: 'website',
@@ -128,25 +129,25 @@ export default function ContactUs2() {
           />
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium text-foreground">
-              Name
+              {t('contact.form.name')}
             </label>
             <input
               id="name"
               type="text"
               required
               className="flex h-11 w-full rounded-xl border border-border bg-surface px-4 text-sm text-foreground shadow-sm outline-none transition focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              placeholder="Enter your name"
+              placeholder={t('contact.form.namePlaceholder')}
               name="name"
             />
           </div>
 
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium text-foreground">
-              Email
+              {t('contact.form.email')}
             </label>
             <input
               id="email"
-              placeholder="Enter your email"
+              placeholder={t('contact.form.emailPlaceholder')}
               type="email"
               className="flex h-11 w-full rounded-xl border border-border bg-surface px-4 text-sm text-foreground shadow-sm outline-none transition focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               name="email"
@@ -155,13 +156,27 @@ export default function ContactUs2() {
           </div>
 
           <div className="space-y-2">
+            <label htmlFor="phone" className="text-sm font-medium text-foreground">
+              {t('contact.form.phone')}
+            </label>
+            <input
+              id="phone"
+              placeholder={t('contact.form.phonePlaceholder')}
+              type="tel"
+              className="flex h-11 w-full rounded-xl border border-border bg-surface px-4 text-sm text-foreground shadow-sm outline-none transition focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              name="phone"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
             <label htmlFor="message" className="text-sm font-medium text-foreground">
-              Message
+              {t('contact.form.message')}
             </label>
             <textarea
               className="min-h-[120px] w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-foreground shadow-sm outline-none transition focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               id="message"
-              placeholder="Enter your message"
+              placeholder={t('contact.form.messagePlaceholder')}
               name="message"
               required
             />
@@ -172,11 +187,11 @@ export default function ContactUs2() {
             type="submit"
             disabled={isLoading}
           >
-            {isLoading ? 'Sending...' : 'Send message'}
+            {isLoading ? t('contact.form.sending') : t('contact.form.send')}
             <Send className="h-4 w-4" />
           </button>
           {isSuccess ? (
-            <p className="text-sm text-foreground">Thanks! We will be in touch shortly.</p>
+            <p className="text-sm text-foreground">{t('contact.form.success')}</p>
           ) : null}
           {isError ? (
             <p className="text-sm text-destructive">{error}</p>

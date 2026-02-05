@@ -1,50 +1,52 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Users, Award, Clock, Star, TrendingUp, BookOpen } from "lucide-react"
+import { CheckCircle, HeartPulse, ShieldCheck, Smile, Stethoscope, Sparkles } from "lucide-react"
+import { useTranslations } from "@/hooks/use-translations"
 
 export function AltaAcademyStats() {
+  const { t } = useTranslations()
   const stats = [
     {
-      icon: Users,
-      value: "1000+",
-      label: "Students Trained",
-      description: "Dental professionals from around the world",
+      icon: Stethoscope,
+      value: t("statsPage.items.0.value"),
+      label: t("statsPage.items.0.label"),
+      description: t("statsPage.items.0.description"),
       gradient: "from-primary to-primary"
     },
     {
-      icon: Award,
-      value: "50+",
-      label: "Courses Available",
-      description: "Comprehensive learning programs",
+      icon: Sparkles,
+      value: t("statsPage.items.1.value"),
+      label: t("statsPage.items.1.label"),
+      description: t("statsPage.items.1.description"),
       gradient: "from-accent to-accent"
     },
     {
-      icon: Clock,
-      value: "95%",
-      label: "Success Rate",
-      description: "Graduates advancing their careers",
+      icon: ShieldCheck,
+      value: t("statsPage.items.2.value"),
+      label: t("statsPage.items.2.label"),
+      description: t("statsPage.items.2.description"),
       gradient: "from-accent to-accent"
     },
     {
-      icon: Star,
-      value: "4.9/5",
-      label: "Student Rating",
-      description: "Based on thousands of reviews",
+      icon: HeartPulse,
+      value: t("statsPage.items.3.value"),
+      label: t("statsPage.items.3.label"),
+      description: t("statsPage.items.3.description"),
       gradient: "from-accent to-accent"
     },
     {
-      icon: TrendingUp,
-      value: "200+",
-      label: "Expert Instructors",
-      description: "Industry leaders and specialists",
+      icon: Smile,
+      value: t("statsPage.items.4.value"),
+      label: t("statsPage.items.4.label"),
+      description: t("statsPage.items.4.description"),
       gradient: "from-primary to-primary"
     },
     {
-      icon: BookOpen,
-      value: "24/7",
-      label: "Learning Support",
-      description: "Round-the-clock assistance",
+      icon: CheckCircle,
+      value: t("statsPage.items.5.value"),
+      label: t("statsPage.items.5.label"),
+      description: t("statsPage.items.5.description"),
       gradient: "from-primary to-primary"
     }
   ]
@@ -53,8 +55,8 @@ export function AltaAcademyStats() {
     <section className="relative w-full bg-background py-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-primary/15 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/15 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-neutral-900/15 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-neutral-800/15 rounded-full mix-blend-multiply blur-3xl opacity-60 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,11 +64,11 @@ export function AltaAcademyStats() {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             <span className="text-primary">
-              Our Impact
+              {t("statsPage.title")}
             </span>
           </h2>
           <p className="text-xl text-muted max-w-3xl mx-auto">
-            Impressive numbers that reflect our commitment to dental education excellence
+            {t("statsPage.subtitle")}
           </p>
         </div>
 
@@ -97,9 +99,9 @@ export function AltaAcademyStats() {
         {/* Additional Info */}
         <div className="mt-16 text-center">
           <div className="inline-flex items-center px-8 py-4 bg-surface/80 backdrop-blur-xl rounded-2xl border border-border">
-            <TrendingUp className="w-6 h-6 text-primary mr-3" />
+            <HeartPulse className="w-6 h-6 text-primary mr-3" />
             <span className="text-muted text-lg">
-              Join the growing community of successful dental professionals
+              {t("statsPage.cta")}
             </span>
           </div>
         </div>

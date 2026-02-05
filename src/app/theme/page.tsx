@@ -60,12 +60,12 @@ export default function ThemePreviewPage() {
                 <Input type="email" placeholder="Email address" />
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select program" />
+                    <SelectValue placeholder="Select service" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="implants">Implantology</SelectItem>
-                    <SelectItem value="surgery">Surgical mastery</SelectItem>
-                    <SelectItem value="prosthetics">Prosthetic rehab</SelectItem>
+                    <SelectItem value="implants">Implant consultation</SelectItem>
+                    <SelectItem value="cosmetic">Cosmetic dentistry</SelectItem>
+                    <SelectItem value="restorative">Restorative care</SelectItem>
                   </SelectContent>
                 </Select>
                 <Input placeholder="Phone number" />
@@ -85,12 +85,12 @@ export default function ThemePreviewPage() {
               <div className="mt-4 rounded-xl border border-border bg-surface2 p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted">Session status</p>
-                    <p className="text-lg font-semibold">Open for registration</p>
+                    <p className="text-sm text-muted">Appointment status</p>
+                    <p className="text-lg font-semibold">Open for scheduling</p>
                   </div>
                   <Badge variant="outline">Limited</Badge>
                 </div>
-                <Button className="mt-4 w-full">Reserve Seat</Button>
+                <Button className="mt-4 w-full">Request Appointment</Button>
               </div>
             </div>
 
@@ -100,24 +100,24 @@ export default function ThemePreviewPage() {
                 <table className="w-full text-left text-sm">
                   <thead className="bg-surface2 text-foreground">
                     <tr>
-                      <th className="px-4 py-3">Session</th>
+                      <th className="px-4 py-3">Service</th>
                       <th className="px-4 py-3">Date</th>
-                      <th className="px-4 py-3">Seats</th>
+                      <th className="px-4 py-3">Availability</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     <tr className="bg-surface">
-                      <td className="px-4 py-3 font-medium">Live Surgery</td>
+                      <td className="px-4 py-3 font-medium">Implant Consultation</td>
                       <td className="px-4 py-3 text-muted">May 24</td>
                       <td className="px-4 py-3">
-                        <Badge variant="secondary">12 left</Badge>
+                        <Badge variant="secondary">Limited</Badge>
                       </td>
                     </tr>
                     <tr className="bg-surface">
-                      <td className="px-4 py-3 font-medium">Workshop</td>
+                      <td className="px-4 py-3 font-medium">Cosmetic Planning</td>
                       <td className="px-4 py-3 text-muted">Jun 14</td>
                       <td className="px-4 py-3">
-                        <Badge variant="secondary">20 left</Badge>
+                        <Badge variant="secondary">Available</Badge>
                       </td>
                     </tr>
                   </tbody>

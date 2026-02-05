@@ -29,31 +29,18 @@ export function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLanguageChange = (newLocale: Locale) => {
-    console.log('Language change requested:', newLocale);
-    
-    // Change the language using our custom hook
     changeLanguage(newLocale);
-    
-    // Get the current path without locale
-    let pathWithoutLocale = pathname;
-    
-    // Remove the current locale from the pathname if it exists
-    if (currentLanguage && pathname && pathname.startsWith(`/${currentLanguage}`)) {
-      pathWithoutLocale = pathname.replace(`/${currentLanguage}`, '') || '/';
+
+    // Strip any existing locale segment from the path to avoid /en/it/fr stacking
+    const segments = (pathname || '/').split('/').filter(Boolean);
+    while (segments.length > 0 && locales.includes(segments[0] as Locale)) {
+      segments.shift();
     }
-    
-    // Handle root path
-    if (pathWithoutLocale === '/') {
-      pathWithoutLocale = '';
-    }
-    
-    // Navigate to the new locale
-    const newPath = `/${newLocale}${pathWithoutLocale}`;
-    console.log('Navigating to:', newPath);
-    
-    // Close dropdown and navigate
+    const pathWithoutLocale = segments.length > 0 ? `/${segments.join('/')}` : '/';
+
+    // Keep the same route; only switch i18n language
     setIsOpen(false);
-    router.push(newPath);
+    router.replace(pathWithoutLocale);
   };
 
   return (

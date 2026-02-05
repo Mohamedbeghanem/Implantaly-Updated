@@ -144,6 +144,24 @@ if (experienceLevel !== "beginner" && experienceLevel !== "intermediate" && expe
   }
 }
 
+function toRegistrationPayload(base: BasePayload): RegistrationPayload {
+  return {
+    formId: base.formId,
+    name: base.name,
+    email: base.email,
+    phone: base.phone ?? "Not provided",
+    experienceLevel: "beginner",
+    profession: undefined,
+    interests: base.formId ? [`form:${base.formId}`] : undefined,
+    message: base.message,
+    pagePath: base.pagePath,
+    source: base.source,
+    userAgent: base.userAgent,
+    ip: base.ip,
+    company: base.company,
+  }
+}
+
 function applyRateLimit(ip: string | undefined) {
   if (!ip) return null
   const now = Date.now()
@@ -210,10 +228,16 @@ export async function POST(req: Request) {
     }
 
     const sanity = getClient()
-    const { company: _company, ...sanitized } = payload
+    const resolvedType: SubmissionType =
+      body.type === "formSubmission" ? "registrationSubmission" : body.type
+    const normalizedPayload =
+      body.type === "formSubmission"
+        ? toRegistrationPayload(payload as BasePayload)
+        : (payload as RegistrationPayload)
+    const { company: _company, ...sanitized } = normalizedPayload
 
     const created = await sanity.create({
-      _type: body.type,
+      _type: resolvedType,
       ...sanitized,
       userAgent: resolvedUserAgent,
       ip,

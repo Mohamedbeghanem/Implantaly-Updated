@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { Linkedin, Twitter } from 'lucide-react';
+import { useTranslations } from '@/hooks/use-translations';
 
 interface TeamMember {
   id: string;
   name: string;
   role: string;
   imageUrl: string;
+  imagePosition?: string;
   socialLinks: {
     twitter: string;
     linkedin: string;
@@ -45,20 +47,20 @@ const teamMembers: TeamMember[] = [
       linkedin: '#',
     },
   },
-   {
+  {
     id: '4',
     name: 'Mr. Didier Crescenzo',
-    role: 'Prothesiste',
+    role: 'Prosthetic Specialist',
     imageUrl: '/didier.jpg',
     socialLinks: {
       twitter: '#',
       linkedin: '#',
     },
   },
-    {
+  {
     id: '5',
     name: 'Dr. Nawel Kara',
-    role: 'Expert in Oral Implantology',
+    role: 'Implant & Restorative Dentistry',
     imageUrl: '/placeholder.svg',
     socialLinks: {
       twitter: '#',
@@ -68,17 +70,17 @@ const teamMembers: TeamMember[] = [
   {
     id: '6',
     name: 'Dr. Farid Ouzrourou',
-    role: 'Expert in Oral Implantology',
+    role: 'Implant & Restorative Dentistry',
     imageUrl: '/placeholder.svg',
     socialLinks: {
       twitter: '#',
       linkedin: '#',
     },
   },
-     {
-    id: '4',
+  {
+    id: '7',
     name: 'Dr. Adel Kara',
-    role: 'Expert in Oral Implantology',
+    role: 'Implant & Oral Surgery',
     imageUrl: '/placeholder.svg',
     socialLinks: {
       twitter: '#',
@@ -89,19 +91,25 @@ const teamMembers: TeamMember[] = [
    
 
 function TeamCard({ member }: { member: TeamMember }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <div className="group h-[420px] w-80 flex-shrink-0 overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all hover:shadow-md">
-      <div className="relative h-[280px] w-full overflow-hidden">
+    <div className="group flex h-full w-80 flex-shrink-0 flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all hover:shadow-md">
+      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-xl bg-muted/40">
         <img
           src={member.imageUrl}
           alt={member.name}
-          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          onLoad={() => setIsLoaded(true)}
+          className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ objectPosition: member.imagePosition ?? '50% 20%' }}
         />
+        {!isLoaded && <div className="absolute inset-0 animate-pulse bg-muted/30" aria-hidden="true" />}
       </div>
-      <div className="p-5">
-        <h3 className="mb-1 text-lg font-bold text-foreground">{member.name}</h3>
-        <p className="text-sm text-accent mb-3">{member.role}</p>
-        <div className="flex gap-x-4">
+      <div className="flex h-full flex-col p-5">
+        <h3 className="mb-1 line-clamp-1 text-lg font-bold text-foreground">{member.name}</h3>
+        <p className="mb-3 line-clamp-1 text-sm text-accent">{member.role}</p>
+        <div className="mt-auto flex gap-x-4">
           <a href={member.socialLinks.twitter} className="text-muted hover:text-accent">
             <Twitter size={20} />
           </a>
@@ -116,6 +124,7 @@ function TeamCard({ member }: { member: TeamMember }) {
 
 export default function TeamSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useTranslations();
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -132,10 +141,10 @@ export default function TeamSlider() {
       <div className="container px-4 md:px-6">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Meet Our Expert Instructors
+            {t('home.team.title')}
           </h2>
           <p className="text-muted mx-auto max-w-2xl md:text-lg">
-            Our team of world-class instructors are dedicated to providing the best hands-on training.
+            {t('home.team.subtitle')}
           </p>
         </div>
 

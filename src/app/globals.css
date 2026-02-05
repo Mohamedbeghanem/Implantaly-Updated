@@ -8,13 +8,13 @@
   --foreground: 0 0% 10%;
   --muted: 0 0% 36%;
   --border: 0 0% 90%;
-  --primary: 148 100% 27%;
+  --primary: 0 0% 8%;
   --primary-foreground: 0 0% 100%;
-  --accent: 356 72% 47%;
+  --accent: 0 0% 18%;
   --accent-foreground: 0 0% 100%;
-  --success: 148 100% 27%;
-  --destructive: 356 72% 47%;
-  --ring: 148 55% 41%;
+  --success: 0 0% 18%;
+  --destructive: 0 0% 18%;
+  --ring: 0 0% 20%;
   --radius: 12px;
   --surface-2: var(--surface);
   --secondary: var(--surface);

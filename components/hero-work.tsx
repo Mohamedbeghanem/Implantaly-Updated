@@ -1,7 +1,10 @@
+"use client";
+
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "@/hooks/use-translations";
 
 interface Hero1Props {
   badge?: string;
@@ -24,56 +27,65 @@ interface Hero1Props {
 }
 
 const Hero2 = ({
-  badge = "Alta Academy By Implantaly",
-  heading = "Live Surgery,See it,Learn it,Master it",
-  description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
-  buttons = {
+  badge,
+  heading,
+  description,
+  buttons,
+  image,
+}: Hero1Props) => {
+  const { t } = useTranslations();
+  const resolvedBadge = badge ?? t("home.sections.cosmetic.badge");
+  const resolvedHeading = heading ?? t("home.sections.cosmetic.heading");
+  const resolvedDescription =
+    description ?? t("home.sections.cosmetic.description");
+  const resolvedButtons = buttons ?? {
     primary: {
-      text: "Contact Us",
+      text: t("home.sections.cosmetic.ctaPrimary"),
       url: "/contact",
     },
     secondary: {
-      text: "Discover our Workshops",
-      url: "/workshops",
+      text: t("home.sections.cosmetic.ctaSecondary"),
+      url: "/features",
     },
-  },
-  image = {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-    alt: "Hero section demo image showing interface components",
-  },
-}: Hero1Props) => {
+  };
+  const resolvedImage = image ?? {
+    src: "/3a198e6f-4bc4-4269-af2e-04027fa912cf.jpeg",
+    alt: t("home.sections.cosmetic.imageAlt"),
+  };
   return (
     <section className="py-32">
       <div className="container">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <img
-            src={image.src}
-            alt={image.alt}
+            src={resolvedImage.src}
+            alt={resolvedImage.alt}
             className="max-h-96 w-full rounded-md object-cover"
           />
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            {badge && (
+            {resolvedBadge && (
               <Badge variant="outline">
-                {badge}
+                {resolvedBadge}
                 <ArrowUpRight className="ml-2 size-4" />
               </Badge>
             )}
             <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
-              {heading}
+              {resolvedHeading}
             </h1>
             <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
-              {description}
+              {resolvedDescription}
             </p>
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-              {buttons.primary && (
+              {resolvedButtons?.primary && (
                 <Button asChild className="w-full sm:w-auto">
-                  <a href={buttons.primary.url}>{buttons.primary.text}</a>
+                  <a href={resolvedButtons.primary.url}>
+                    {resolvedButtons.primary.text}
+                  </a>
                 </Button>
               )}
-              {buttons.secondary && (
+              {resolvedButtons?.secondary && (
                 <Button asChild variant="outline" className="w-full sm:w-auto">
-                  <a href={buttons.secondary.url}>
-                    {buttons.secondary.text}
+                  <a href={resolvedButtons.secondary.url}>
+                    {resolvedButtons.secondary.text}
                     <ArrowRight className="size-4" />
                   </a>
                 </Button>

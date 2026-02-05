@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
+import { ClientProviders } from "@/components/client-providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alta Academy - Dental Education Platform",
-  description: "Professional dental education and training platform by Implantaly",
+  title: "Implantaly Dental Clinic",
+  description: "Implantaly Dental Clinic offering implantology, restorative, and cosmetic dentistry in Algiers.",
 };
 
 export default function RootLayout({
@@ -28,8 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navigation />
-        {children}
+        <ClientProviders>
+          <Navigation />
+          {children}
+        </ClientProviders>
       </body>
     </html>
   );

@@ -2,16 +2,14 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { GraduationCap, Home, ArrowLeft, Search, BookOpen, Users, Award, Phone } from "lucide-react"
+import { Home, Users, Award, Phone } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function NotFound() {
   const quickLinks = [
     { name: "Home", href: "/", icon: Home },
-    { name: "Courses", href: "/courses", icon: BookOpen },
+    { name: "Services", href: "/features", icon: Award },
     { name: "About", href: "/about", icon: Users },
-    { name: "Services", href: "/services", icon: Award },
     { name: "Contact", href: "/contact", icon: Phone }
   ]
 
@@ -19,20 +17,22 @@ export default function NotFound() {
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-4">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-primary/10 mix-blend-multiply blur-3xl opacity-60 animate-float"></div>
-        <div className="absolute bottom-20 right-20 h-96 w-96 rounded-full bg-accent/10 mix-blend-multiply blur-3xl opacity-60 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-neutral-900/10 mix-blend-multiply blur-3xl opacity-60 animate-float"></div>
+        <div className="absolute bottom-20 right-20 h-96 w-96 rounded-full bg-neutral-800/10 mix-blend-multiply blur-3xl opacity-60 animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <Image
-            src="/Altaacademy.svg"
-            alt="Alta Academy logo"
-            width={200}
-            height={60}
-            className="h-16 w-auto"
-          />
+          <div className="flex items-center gap-3">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primaryForeground text-lg font-semibold">
+              ID
+            </div>
+            <div className="text-left">
+              <div className="text-lg font-semibold text-foreground">Implantaly</div>
+              <div className="text-xs uppercase tracking-[0.35em] text-muted">Dental Clinic</div>
+            </div>
+          </div>
         </div>
 
         {/* 404 Content */}
@@ -65,9 +65,9 @@ export default function NotFound() {
               </Link>
             </Button>
             <Button asChild variant="outline" className="px-8 py-3 rounded-xl">
-              <Link href="/courses" className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-2" />
-                Browse Courses
+              <Link href="/features" className="flex items-center">
+                <Award className="w-5 h-5 mr-2" />
+                View Services
               </Link>
             </Button>
           </div>
@@ -77,7 +77,7 @@ export default function NotFound() {
             <h3 className="text-lg font-semibold text-foreground mb-6">
               Quick Navigation
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {quickLinks.map((link, index) => (
                 <Link
                   key={link.name}
@@ -104,7 +104,7 @@ export default function NotFound() {
           <Button asChild variant="ghost" className="text-primary hover:text-primary/80 hover:bg-surface2">
             <Link href="/contact" className="flex items-center">
               <Phone className="w-4 h-4 mr-2" />
-              Contact Support
+              Contact the Clinic
             </Link>
           </Button>
         </div>
