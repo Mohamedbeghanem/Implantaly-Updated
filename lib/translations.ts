@@ -329,100 +329,6 @@ export const translations = {
         locationLabel: "Location at"
       }
     },
-    footer: {
-      badge: "Clinica Dentale Implantaly",
-      headings: {
-        quickLinks: "Link rapidi",
-        services: "Servizi",
-        contact: "Contatti"
-      },
-      links: {
-        home: "Home",
-        liveSurgery: "Live Surgery",
-        services: "Servizi",
-        about: "Chi siamo",
-        contact: "Contatti",
-        privacy: "Privacy",
-        terms: "Termini di servizio",
-        sitemap: "Mappa del sito"
-      },
-      servicesList: [
-        "Chirurgia implantare & riabilitazione completa",
-        "Odontoiatria estetica & smile design",
-        "Odontoiatria restaurativa",
-        "Pianificazione digitale & diagnosi",
-        "Prevenzione & mantenimento"
-      ],
-      cta: {
-        title: "Prenota una visita e ritrova un sorriso sicuro.",
-        subtitle: "Implantologia avanzata e cure estetiche con un approccio delicato.",
-        primary: "Prenota una visita",
-        secondary: "Contatta la clinica"
-      },
-      badges: ["Cura centrata sul paziente", "Protocolli moderni"],
-      badge: "Clinique Dentaire Implantaly",
-      headings: {
-        quickLinks: "Liens rapides",
-        services: "Services",
-        contact: "Contact"
-      },
-      links: {
-        home: "Accueil",
-        liveSurgery: "Chirurgie en direct",
-        services: "Services",
-        about: "Ã€ propos",
-        contact: "Contact",
-        privacy: "Politique de confidentialitÃ©",
-        terms: "Conditions d'utilisation",
-        sitemap: "Plan du site"
-      },
-      servicesList: [
-        "Chirurgie implantaire & rÃ©habilitation totale",
-        "Dentisterie esthÃ©tique & design du sourire",
-        "Dentisterie restauratrice",
-        "Planification numÃ©rique & diagnostic",
-        "Soins prÃ©ventifs & maintenance"
-      ],
-      cta: {
-        title: "Prenez rendez-vous et retrouvez un sourire en confiance.",
-        subtitle: "Implantologie avancÃ©e et soins esthÃ©tiques avec une approche douce.",
-        primary: "Prendre rendez-vous",
-        secondary: "Contacter la clinique"
-      },
-      badges: ["Soins centrÃ©s patient", "Protocoles modernes"],
-      badge: "Implantaly Dental Clinic",
-      headings: {
-        quickLinks: "Quick Links",
-        services: "Services",
-        contact: "Contact"
-      },
-      links: {
-        home: "Home",
-        liveSurgery: "Live Surgery",
-        services: "Services",
-        about: "About",
-        contact: "Contact",
-        privacy: "Privacy Policy",
-        terms: "Terms of Service",
-        sitemap: "Sitemap"
-      },
-      servicesList: [
-        "Implant Surgery & Full-Arch Care",
-        "Cosmetic Dentistry & Smile Design",
-        "Restorative Dentistry",
-        "Digital Planning & Diagnostics",
-        "Preventive & Maintenance Care"
-      ],
-      cta: {
-        title: "Book a consultation and build a smile you feel confident in.",
-        subtitle: "Advanced implantology, restorative, and cosmetic care with a comfort-first approach.",
-        primary: "Book Consultation",
-        secondary: "Contact the Clinic"
-      },
-      badges: ["Patient-first care", "Modern clinical protocols"],
-      description: "A modern dental clinic focused on implantology, restorative, and cosmetic care.",
-      copyright: "Implantaly Dental Clinic. All rights reserved."
-    },
     services: {
       title: "Our Services",
       subtitle: "Comprehensive dental implant solutions tailored to your needs",
@@ -972,19 +878,6 @@ export const translations = {
         tips: "Conseils de soins"
       }
     },
-    footer: {
-      description: "Spécialistes leaders en implants dentaires offrant des soins avancés et des solutions de traitement personnalisées.",
-      quickLinks: "Liens rapides",
-      services: "Services",
-      contact: "Contact",
-      address: "Adresse",
-      phone: "Téléphone",
-      email: "Email",
-      hours: "Heures",
-      copyright: "© 2024 Implantaly Group. Tous droits réservés.",
-      privacy: "Politique de confidentialité",
-      terms: "Conditions de service"
-    },
     altaAcademy: {
       title: "Académie Alta",
       subtitle: "Formation et éducation dentaire avancées",
@@ -1428,19 +1321,6 @@ export const translations = {
         health: "Salute orale",
         tips: "Consigli per la cura"
       }
-    },
-    footer: {
-      description: "Specialisti leader in impianti dentali che forniscono cure avanzate e soluzioni di trattamento personalizzate.",
-      quickLinks: "Link rapidi",
-      services: "Servizi",
-      contact: "Contatto",
-      address: "Indirizzo",
-      phone: "Telefono",
-      email: "Email",
-      hours: "Orari",
-      copyright: "© 2024 Implantaly Group. Tutti i diritti riservati.",
-      privacy: "Informativa sulla privacy",
-      terms: "Termini di servizio"
     },
     altaAcademy: {
       title: "Accademia Alta",

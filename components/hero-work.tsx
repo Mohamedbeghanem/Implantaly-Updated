@@ -8,8 +8,8 @@ import { useTranslations } from "@/hooks/use-translations";
 
 interface Hero1Props {
   badge?: string;
-  heading: string;
-  description: string;
+  heading?: string;
+  description?: string;
   buttons?: {
     primary?: {
       text: string;
@@ -20,7 +20,7 @@ interface Hero1Props {
       url: string;
     };
   };
-  image: {
+  image?: {
     src: string;
     alt: string;
   };
