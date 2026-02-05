@@ -1,6 +1,8 @@
 {
   "name": "alta-academy",
   "version": 2,
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
   "builds": [
     {
       "src": "package.json",
