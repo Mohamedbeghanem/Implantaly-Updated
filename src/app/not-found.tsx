@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Home, Users, Award, Phone } from "lucide-react"
+import { BrandLogo } from "@/components/brand-logo"
 import Link from "next/link"
 
 export default function NotFound() {
@@ -25,13 +26,7 @@ export default function NotFound() {
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primaryForeground text-lg font-semibold">
-              ID
-            </div>
-            <div className="text-left">
-              <div className="text-lg font-semibold text-foreground">Implantaly</div>
-              <div className="text-xs uppercase tracking-[0.35em] text-muted">Dental Clinic</div>
-            </div>
+            <BrandLogo variant="small" alt="Implantaly" />
           </div>
         </div>
 

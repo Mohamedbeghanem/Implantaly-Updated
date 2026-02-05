@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
+import { BrandLogo } from "@/components/brand-logo"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useTranslations } from "@/hooks/use-translations"
 
@@ -30,13 +31,7 @@ export function Navigation() {
       <div className="border-b border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primaryForeground text-lg font-semibold">
-              ID
-            </div>
-            <div className="leading-tight">
-              <div className="text-lg font-semibold text-foreground">Implantaly</div>
-              <div className="text-xs uppercase tracking-[0.35em] text-muted">Dental Clinic</div>
-            </div>
+            <BrandLogo variant="header" alt="Implantaly" />
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -82,13 +77,7 @@ export function Navigation() {
           <div className="fixed right-0 top-0 z-50 h-full w-full max-w-sm bg-surface shadow-2xl">
             <div className="flex items-center justify-between border-b border-border px-5 py-4">
               <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primaryForeground text-base font-semibold">
-                  ID
-                </div>
-                <div className="leading-tight">
-                  <div className="text-base font-semibold text-foreground">Implantaly</div>
-                  <div className="text-[10px] uppercase tracking-[0.35em] text-muted">Dental Clinic</div>
-                </div>
+                <BrandLogo variant="small" alt="Implantaly" />
               </Link>
               <button
                 onClick={() => setIsOpen(false)}

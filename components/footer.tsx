@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react"
 import Link from "next/link"
+import { BrandLogo } from "@/components/brand-logo"
 import { useTranslations } from "@/hooks/use-translations"
 
 export function Footer() {
@@ -121,13 +122,7 @@ export function Footer() {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primaryForeground text-lg font-semibold">
-                  ID
-                </div>
-                <div>
-                  <div className="text-lg font-semibold text-foreground">Implantaly</div>
-                  <div className="text-xs uppercase tracking-[0.35em] text-muted">Dental Clinic</div>
-                </div>
+                <BrandLogo variant="footer" alt="Implantaly" />
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted">
                 {t("footer.description")}
